@@ -1,11 +1,11 @@
-import { Questao_1 } from "./Exercicios/Condicional/Questao_1.js"
-import { Questao_01 } from "./Exercicios/Questao_01.js"
-import { Questao_3 } from "./Exercicios/Questao_3.js"
-import { Questao_4 } from "./Exercicios/Questao_4.js"
-import { Questao_5 } from "./Exercicios/Questao_5.js"
-import { Questao_6 } from "./Exercicios/Questao_6.js"
-import { Questao_7 } from "./Exercicios/Questao_7.js"
-import { Questao_8 } from "./Exercicios/Questao_8.js"
+import { Questao_1 } from "./Exercicios/Avulsas/Questao_1.js"
+import { Questao_01 } from "./Exercicios/Condicional/Questao_01.js"
+import { Questao_3 } from "./Exercicios/Avulsas/Questao_3.js"
+import { Questao_4 } from "./Exercicios/Avulsas/Questao_4.js"
+import { Questao_5 } from "./Exercicios/Avulsas/Questao_5.js"
+import { Questao_6 } from "./Exercicios/Avulsas/Questao_6.js"
+import { Questao_7 } from "./Exercicios/Avulsas/Questao_7.js"
+import { Questao_8 } from "./Exercicios/Avulsas/Questao_8.js"
 
 function executarMenu(opcao: number) {
     console.clear()
