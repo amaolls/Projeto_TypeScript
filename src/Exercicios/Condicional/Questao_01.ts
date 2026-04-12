@@ -9,7 +9,7 @@ export function Questao_01(): any {
             alert("Número "+valor+" é Ímpar.") 
         }
     }
-
-    let numero: number = Number(prompt("Informe um numero: "))
+    
+    let numero: number = Number(prompt("1º - Crie uma função que receba um número e retorne se ele é par ou ímpar."+"/n"+"Informe um numero: "))
     impar_Par(numero)
 }
