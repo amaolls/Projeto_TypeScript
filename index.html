@@ -1,83 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto TypeScript</title>
-    
+    <title>Projeto TypeScript - Menu de Exercícios</title>
+    <style>
+        body {
+            background-color: #e6f2ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            color: #1a2b4c;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        img {
+            display: block;
+            margin: 0 auto 20px;
+        }
+        h1, h2 {
+            color: #3178C6;
+            border-bottom: 2px solid #3178C6;
+            padding-bottom: 8px;
+        }
+        h2 {
+            border-bottom-width: 1px;
+            margin-top: 25px;
+        }
+        .secao {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 12px;
+            margin: 15px 0 5px;
+        }
+        button {
+            background-color: #3178C6;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            border: 1px solid #235a9e;
+        }
+        button:hover {
+            background-color: #235a9e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        hr {
+            margin: 30px 0 10px;
+            border: 1px dashed #a0c4e8;
+        }
+        .descricao {
+            font-style: italic;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        footer {
+            background: #2c3e50;
+            color: #ddd0c0;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        footer a {
+            color: #f0d5b0;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body style="background-color: lightblue;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/TypeScript_Logo_%28Blue%29.svg" alt="TypeScript" width="500" height="300">
-
-    <h1 style="color: #3178C6;">Exercícios TypeScript</h1>
-    <p><i>Clique no botão para executar a questão correspondente:</i></p>
-
-     <h1 style="color: #3178C6;"><b>Menu de Exercícios:</b></h1>
-    
-    <div class="botoes">
-            <h1 style="color: #3178C6;">Condicional ↓</h1>
-            <button id="btn-q2">Questão 1</button>
-            <br>
-             <button id="btn-q1">Questão 2</button>
-            <br>
-            <button id="btn-q3">Questão 3</button>
-            <br>
-            <button id="btn-q4">Questão 4</button>
-            <hr>
-            <h1 style="color: #3178C6;">Repetição ↓</h1>
-             <button id="btn-q1">Questão 1</button>
-            <br>
-            <button id="btn-q3">Questão 2</button>
-            <br>
-            <button id="btn-q4">Questão 3</button>
-            <br>
-            <button id="btn-q5">Questão 4</button>
-            <br>
-            <button id="btn-q6">Questão 5</button>
-            <hr>
-            <h1 style="color: #3178C6;">Funções ↓</h1>
-            <button id="btn-q1">Questão 1</button>
-            <br>
-            <button id="btn-q3">Questão 2</button>
-            <br>
-            <button id="btn-q4">Questão 3</button>
-            <br>
-            <button id="btn-q5">Questão 4</button>
-            <br>
-            <button id="btn-q6">Questão 5</button>
-            <br>
-            <button id="btn-q7">Questão 6</button>
-            <br>
-            <button id="btn-q8">Questão 7</button>
-            <br>
-            <button id="btn-q6">Questão 8</button>
-            <br>
-            <button id="btn-q7">Questão 9</button>
-            <br>
-            <button id="btn-q8">Questão 10</button>
-            <hr>
-            <h1 style="color: #3178C6;">Avulsas ↓</h1>
-            <button id="btn-q1">Questão 1</button>
-            <br>
-            <button id="btn-q3">Questão 2</button>
-            <br>
-            <button id="btn-q4">Questão 3</button>
-            <br>
-            <button id="btn-q5">Questão 4</button>
-            <br>
-            <button id="btn-q6">Questão 5</button>
-            <br>
-            <button id="btn-q7">Questão 6</button>
-            <br>
-            <button id="btn-q8">Questão 7</button>
-            <hr>
-            
-            
-    </div>
-    
-    
-    <script type="module" src="./dist/index.js"></script>
-
 <body>
-   
+<div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/TypeScript_Logo_%28Blue%29.svg" 
+         alt="TypeScript Logo" width="260" height="156">
+
+    <h1> Exercícios TypeScript </h1>
+    <p class="descricao">Clique no botão correspondente para executar a questão. Os resultados aparecerão no console do navegador (F12) ou no alert.</p>
+    <hr>
+    <h2>Condicional ⤵</h2>
+    <div class="secao">
+        <button id="btn-q1">Questão 1 (Condicional)</button>   
+        <button id="btn-q2">Questão 2 (Condicional)</button>   
+        <button id="btn-q3">Questão 3 (Condicional)</button>  
+        <button id="btn-q4">Questão 4 (Condicional)</button> 
+         
+    </div>
+    <hr>
+    <h2>Funções ⤵</h2>
+    <div class="secao">
+        <button id="btn-q5">Questão 1 (Função)</button>   
+        <button id="btn-q6">Questão 2 (Função)</button>   
+        <button id="btn-q7">Questão 3 (Função)</button>   
+        <button id="btn-q8">Questão 3 (Função)</button>   
+        <button id="btn-q9">Questão 5 (Função)</button>    
+        <button id="btn-q10">Questão 6 (Função)</button>    
+        <button id="btn-q11">Questão 7 (Função)</button>    
+        <button id="btn-q12">Questão 8 (Função)</button>    
+        <button id="btn-q13">Questão 9 (Função)</button>    
+        <button id="btn-q14">Questão 10 (Função)</button> 
+         
+    </div>
+    <hr>
+    <h2>Repetição ⤵</h2>
+    <div class="secao">
+        <button id="btn-q15">Questão 1 (Repetição)</button> 
+        <button id="btn-q16">Questão 2 (Repetição)</button> 
+        <button id="btn-q17">Questão 3 (Repetição)</button> 
+        <button id="btn-q18">Questão 4 (Repetição)</button> 
+        <button id="btn-q19">Questão 5 (Repetição)</button>  
+    
+    </div>
+    <hr>
+     <h2>Array ⤵</h2>
+    <div class="secao">
+        <button id="btn-q20">Questão 1 (Array)</button>   
+        <button id="btn-q21">Questão 2 (Array)</button>   
+        <button id="btn-q22">Questão 3 (Array)</button>   
+        <button id="btn-q23">Questão 4 (Array)</button>   
+        <button id="btn-q24">Questão 5 (Array)</button>  
+        <button id="btn-q25">Questão 6 (Array)</button>  
+        <button id="btn-q26">Questão 7 (Array)</button>
+        <button id="btn-q27">Questão 8 (Array)</button>  
+        <button id="btn-q28">Questão 9 (Array)</button>    
+    </div>
+    <hr>
+</div>
+
+
+<script type="module" src="./dist/index.js"></script>
+</body>
+<footer>
+        <p>Projeto TypeScript · <a href="#">Linguagem de Programação II</a></p>
+    </footer>
 </html>
