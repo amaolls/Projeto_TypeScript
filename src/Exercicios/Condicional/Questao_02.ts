@@ -16,5 +16,39 @@
 // l) Dezembro (12): Primavera
 
  export function Questao_02(): any{
+     
     
+    let entrada: string | null = prompt("Informe um mês válido de 1 a 12: ");
+    
+    let mes: number = Number(entrada)
+    let estacao: string
+
+    switch (mes) {
+        case 1:
+        case 2:
+        case 3:
+            estacao = "Verão"
+            break;
+        case 4:
+        case 5:
+        case 6:
+            estacao = "Outono"
+            break;
+        case 7:
+        case 8:
+        case 9:
+            estacao = "Inverno"
+            break;
+        case 10:
+        case 11:
+        case 12:
+            estacao = "Primavera"
+            break;
+        default:
+            alert("Mês inválido! Informe um número entre 1 e 12.")
+            return
+    }
+
+    alert(`A estação do ano correspondente ao mês ${mes} é ${estacao}`)
+
  }
