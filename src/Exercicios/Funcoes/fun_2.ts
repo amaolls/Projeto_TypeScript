@@ -12,6 +12,36 @@
 // o Recebe o status_alerta (True ou False).
 // o Se status_alerta for True, imprime &quot;ALERTA: Temperatura fora da faixa ideal!&quot;.
 // o Se status_alerta for False, imprime &quot;Temperatura dentro da faixa normal.&quot;.
-export function fun_2(){
+export function fun_2(): void {
     
+    alert("Leitor de temperatura")
+    
+    
+    function ler_temperatura(): number {
+        let temp: number = Number(prompt("Digite uma temperatura: "))
+        return temp
+    }
+    
+    
+    function verificar_alerta_temperatura(temperatura: number): number {
+        if (temperatura < 10 || temperatura > 30) {
+            return 1
+        } else {
+            return 0
+        }
+    }
+    
+    
+    function emitir_mensagem_alerta(status_alerta: number): void {
+        if (status_alerta === 1) {
+            alert("ALERTA: Temperatura fora da faixa ideal!")
+        } else {
+            alert("Temperatura dentro da faixa normal.")
+        }
+    }
+    
+    
+    let temp: number = ler_temperatura()
+    let alerta: number = verificar_alerta_temperatura(temp)
+    emitir_mensagem_alerta(alerta)
 }
