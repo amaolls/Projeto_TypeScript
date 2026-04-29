@@ -8,19 +8,65 @@
 // Utilize um menu interativo com opções (adicionar, concluir, exibir, sair) e um laço while para
 // manter o programa rodando até o usuário escolher sair.
 
-export function Questao_5(): any {
-     
- let contador: number = 0 
+export function Questao_5(): void {
+    alert("Organizador de Tarefas Diárias")
 
-for (let i: number = 1; i <= 5; i++){
-    let num : number = Number(prompt("Digite 5 valores: "))
-    
-    if (num > 0){
-        contador++
+    function gerenciar_tarefas(): void {
+        let tarefas: string[] = []
+        let opcao_t: string = ""
+
+        while (opcao_t !== "4") {
+            opcao_t = String (prompt(
+                "MENU\n1 - Adicionar tarefa\n2 - Concluir tarefa (remover)\n3 - Exibir pendentes\n4 - Sair"
+            ))
+
+            if (opcao_t === "1") {
+                let novaTarefa: string | null = prompt("Digite a tarefa:")
+                if (novaTarefa !== null && novaTarefa.trim() !== "") {
+                    tarefas.push(novaTarefa)
+                    alert("Tarefa adicionada.")
+                } else {
+                    alert("Tarefa inválida.")
+                }
+            } else if (opcao_t === "2") {
+                if (tarefas.length === 0) {
+                    alert("Nenhuma tarefa pendente.")
+                } else {
+                    let lista: string = "Escolha o número da tarefa para concluir:\n"
+                    for (let i: number = 0; i < tarefas.length; i++) {
+                        lista += (i + 1) + ". " + tarefas[i] + "\n"
+                    }
+                    let escolha: string | null = prompt(lista)
+                    if (escolha !== null) {
+                        let indice: number = Number(escolha) - 1
+                        if (indice >= 0 && indice < tarefas.length) {
+                            tarefas.splice(indice, 1);
+                            alert("Tarefa concluída e removida.")
+                        } else {
+                            alert("Número inválido.")
+                        }
+                    }
+                }
+            } else if (opcao_t === "3") {
+                if (tarefas.length === 0) {
+                    alert("Nenhuma tarefa pendente.")
+                } else {
+                    let lista: string = "Tarefas pendentes:\n";
+                    for (let i: number = 0; i < tarefas.length; i++) {
+                        lista += (i + 1) + ". " + tarefas[i] + "\n"
+                    }
+                    alert(lista)
+                }
+            } else if (opcao_t === "4") {
+                alert("Encerrando organizador de tarefas.")
+                return
+            } else {
+                alert("Opção inválida. Tente novamente.")
+            }
+        }
     }
-    console.log("Números Positivos: "+contador)
-    console.log("Números digitados: "+num)
-}
+
+    gerenciar_tarefas()
 }
 
 
