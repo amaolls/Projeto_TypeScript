@@ -7,20 +7,37 @@
 // ● Arredondar a média para duas casas decimais.
 // ● Retornar o valor da média.
 
-export function Questao_4(): any {
-    let idade: number = Number(prompt("Informe a Idade:"))
-
-function maior_idade(id:number){
-    if (id >= 18 && id <= 100){
-        alert("Idade: "+id+". Maior de Idade!")
-    } else if(id >= 0 && id < 18){
-        alert("Idade: "+id+". Menor de Idade!")
-    }else{
-        alert("Invalido! Tente novamente!")
-    }
+export function Questao_4(): void {
+   
+    alert("Calculadora de Média do ENEM")
+    function calcular_media(notas: number[]): number {
+        let soma: number = 0
+        for (let i: number = 0; i < notas.length; i++) {
+            soma += notas[i]
+        }
+        let media: number = soma / notas.length
         
-    
-}
+        let mediaArredondada: number = Math.round(media * 100) / 100
+        return mediaArredondada
+    }
 
-maior_idade(idade)
+    let entrada: string | null = prompt("Digite as notas separadas por vírgula (ex: 7.5,8,6.9):")
+    if (entrada === null || entrada.trim() === "") {
+        alert("Nenhuma nota fornecida.")
+        return
+    }
+    let partes: string[] = entrada.split(",")
+    let notas: number[] = []
+    for (let i: number = 0; i < partes.length; i++) {
+        let valor: number = Number(partes[i].trim())
+        if (!isNaN(valor)) {
+            notas.push(valor)
+        }
+    }
+    if (notas.length === 0) {
+        alert("Nenhuma nota válida.")
+        return
+    }
+    let media: number = calcular_media(notas)
+    alert("Média: " + media.toFixed(2))
 }
