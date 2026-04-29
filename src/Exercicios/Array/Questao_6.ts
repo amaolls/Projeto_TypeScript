@@ -4,23 +4,29 @@
 // c) Ordenar o vetor usando o sort();
 // d) Apresentar os nomes inseridos de forma ordenada.
 
-export function Questao_6(): any {
-    let nota: number = 0
-let media: number
-let soma: number = 0
-function calcule_Media(n:number){
+export function Questao_6(): void {
 
-    for (let i: number = 1; i <= 3; i++){
-        nota = Number(prompt("Informe a Nota: "))
-        soma += nota   
-    }
-    media = soma/3
-        if(media >= 7){
-            alert("Média do Aluno: "+media.toFixed(2)+". Aprovado!")
-        } else{
-            alert("Média do Aluno: "+media.toFixed(2)+". Reprovado!")
+    alert("Armazena 15 nomes de pessoas")
+    let nomes: string[] = []
+
+
+    for (let i: number = 1; i <= 15; i++) {
+        let nome: string | null = prompt("Digite o " + i + "º nome:")
+        if (nome !== null) {
+            nomes.push(nome)
+        } else {
+            nomes.push("")
         }
-}
+    }
 
-calcule_Media(nota)
+
+    let original: string = "Ordem original:\n" + nomes.join("\n")
+    alert(original)
+
+
+    nomes.sort()
+
+
+    let ordenado: string = "Ordem alfabética:\n" + nomes.join("\n")
+    alert(ordenado)
 }
