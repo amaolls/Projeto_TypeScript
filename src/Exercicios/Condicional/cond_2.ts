@@ -17,7 +17,7 @@
 
  export function cond_2(): any{
      
-    
+    alert("Esse programa retorna estaçõesdo ano correspondente ao mês")
     let entrada: string | null = prompt("Informe um mês válido de 1 a 12: ");
     
     let mes: number = Number(entrada)
