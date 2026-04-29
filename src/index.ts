@@ -40,6 +40,7 @@ const codigosQuestoes: Record<string, string> = {
 • Par ou Ímpar
 • Positivo ou Negativo
 
+alert("Esse programa retorna se número é par ou ímpar.")
 function impar_Par(valor:number): any {
         if(valor % 2 === 0){
             alert("Número " + valor + " é Par.")
@@ -48,7 +49,7 @@ function impar_Par(valor:number): any {
         }
     }
     
-    let numero: number = Number(prompt("Esse programa retorna se número é par ou ímpar.\\n Informe um número: "))
+    let numero: number = Number(prompt("Informe um número: "))
     impar_Par(numero)`, 
 //Q2   
     'btn-q2': `2 - Crie um programa chamado Estações. Este programa deve ler uma data e armazenar na
@@ -69,6 +70,7 @@ j) Outubro (10): Primavera
 k) Novembro (11): Primavera
 l) Dezembro (12): Primavera
 
+    alert("Esse programa retorna estaçõesdo ano correspondente ao mês")
     let entrada: string | null = prompt("Informe um mês válido de 1 a 12: ");
     
     let mes: number = Number(entrada)
@@ -110,6 +112,7 @@ l) Dezembro (12): Primavera
 4 - Divisão
 Use switch...Case
 
+alert("Calculadora simples")
 let P_entrada: number = Number(prompt("Digite o primeiro número: "))
     let S_entrada: number = Number(prompt("Digite o segundo número: "))
     let opcao: number = Number(prompt("Escolha a operação:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão"))
@@ -145,6 +148,7 @@ let P_entrada: number = Number(prompt("Digite o primeiro número: "))
 ● ‘Primeiro é maior’, caso o primeiro seja maior que o segundo;
 ● ‘Segundo maior’, caso o segundo seja maior que o primeiro.
 
+    alert("Ler dois valores e imprime uma das mensagens: \n‘Números iguais’ \n‘Primeiro é maior’ \n‘Segundo maior’")
     let num1: number = Number(prompt("Digite o primeiro número: "))
     let num2: number = Number(prompt("Digite o segundo número: "))
 
@@ -161,7 +165,6 @@ let P_entrada: number = Number(prompt("Digite o primeiro número: "))
 para calcular a soma de todos os números de 1 até o número fornecido. (Ex: somarAte(4)
 deve retornar 10, pois 1+2+3+4 = 10).
 
-export function fun_1(): void {
     
     alert("Esse programa calcula a soma de todos os números de 1 até o número fornecido.")
     let num_info: number = Number(prompt("Informe um número: "))
@@ -176,8 +179,7 @@ export function fun_1(): void {
     }
     
     let resultado: number = somarAte(num_info)
-    alert('A soma dos elementos contidos no número $ {num_info} é $ {resultado}')
-}`,
+    alert('A soma dos elementos contidos no número $ {num_info} é $ {resultado}')`,
 
 //Q2
     'btn-q6': `2 - O IF tem uma estufa e o professor de biologia quer um sistema simples para monitorar a
@@ -499,7 +501,47 @@ limite final.
 ii. Retorna true para aprovado ou false para negado.
 
 Função exibir_status(resultado): Imprime "Crédito Aprovado" ou "Crédito Negado".
-Peça a renda e o valor da parcela que o cliente deseja pagar, processe e mostre o resultado.`,
+Peça a renda e o valor da parcela que o cliente deseja pagar, processe e mostre o resultado.
+
+ alert("Simulador de Aprovação de Crédito")
+    
+    
+    function solicitar_renda_mensal(): number {
+        let renda: number = Number(prompt("Informe sua renda mensal (R$): "))
+        while (renda <= 0) {
+            renda = Number(prompt("Valor inválido. Informe uma renda positiva: "))
+        }
+        return renda
+    }
+    
+    
+    function analisar_credito(renda: number, valor_parcela: number): number {
+        let limite: number = renda
+        if (renda > 5000) {
+            limite = renda + 500
+        }
+        let parcelaMaxima: number = limite * 0.3
+        if (valor_parcela <= parcelaMaxima) {
+            return 1
+        } else {
+            return 0
+        }
+    }
+    
+
+    function exibir_status(status: number): void {
+        if (status === 1) {
+            alert("Crédito Aprovado")
+        } else {
+            alert("Crédito Negado")
+        }
+    }
+    
+
+    let renda: number = solicitar_renda_mensal()
+    let parcela: number = Number(prompt("Informe o valor da parcela desejada (R$): "))
+    let resultado: number = analisar_credito(renda, parcela)
+    exibir_status(resultado)`,
 
 //Q10
     'btn-q14': `10 - Calculadora de IMC com Classificação.
@@ -511,15 +553,71 @@ o Entre 18.5 e 24.9: "Peso Normal"
 o 25 ou mais: "Sobrepeso"
 ● Função exibir_laudo(nome, classificacao): Imprime: "Paciente: [nome] - Status:
 [classificacao]".
-● Uso: Peça o nome, peso e altura, processe os dados e exiba o laudo.`,
+● Uso: Peça o nome, peso e altura, processe os dados e exiba o laudo.
+
+    alert("Calculadora de IMC com Classificação")
+
+    let nome_cliente: string = String (prompt("Informe o nome do paciente: "))
+    let peso: number = Number(prompt("Informe o peso (kg): "))
+    let altura: number = Number(prompt("Informe a altura (m): "))
+
+
+    function calcular_imc(peso: number, altura: number): number {
+        let imc: number = peso / (altura * altura)
+        return imc
+    }
+
+    function classificar_imc(valor_imc: number): string {
+        if (valor_imc < 18.5) {
+            return "Abaixo do peso"
+        } else if (valor_imc >= 18.5 && valor_imc < 25) {
+            return "Peso Normal"
+        } else {
+            return "Sobrepeso"
+        }
+    }
+
+
+    function exibir_laudo(nome_cliente: string, classificacao: string): void {
+        alert('Paciente: $ {nome_cliente} \n Status: $ {classificacao}')
+    }
+
+
+    let imc: number = calcular_imc(peso, altura)
+    let classificacao: string = classificar_imc(imc)
+    exibir_laudo(nome_cliente, classificacao)`,
 
 //Q1 (REPETIÇÃO)
     'btn-q15': `1 - Crie um programa que peça números até o usuário digitar 0 e mostre:
 ● Quantidade de números digitados
-● Soma total`,
+● Soma total
+
+    alert("Programa: soma e conta números até digitar 0")
+
+    let quantidade: number = 0
+    let soma: number = 0
+    let numero: number = Number(prompt("Digite um número (0 para sair): "))
+
+    while (numero !== 0) {
+        quantidade++
+        soma += numero
+        numero = Number(prompt("Digite outro número (0 para sair): "))
+    }
+
+    alert("Quantidade de números digitados: " + quantidade + "\nSoma total: " + soma)`,
 
 //Q2
-    'btn-q16': `2 - Desenvolva a tabuada de um número usando for.`,
+    'btn-q16': `2 - Desenvolva a tabuada de um número usando for.
+    
+        alert("Tabuada do número")
+    let num: number = Number(prompt("Digite um número para ver sua tabuada: "))
+    let tabuada: string = ""
+
+    for (let i: number = 1; i <= 10; i++) {
+        tabuada += '$ {num} x $ {i} = $ {num * i}\n'
+    }
+
+    alert(tabuada)`,
 
 //Q3
     'btn-q17': `3 - Faça um programa que leia nome, horas trabalhadas, salário-hora e sexo de um grupo de
@@ -529,12 +627,81 @@ Calcule e imprima:
 ● Salário total dos funcionários, o maior salário, juntamente com o nome de quem o
 recebeu;
 ● O número de funcionários do sexo masculino e feminino cadastrado;
-● O percentual de funcionários homens e mulheres cadastrados.`,
+● O percentual de funcionários homens e mulheres cadastrados.
+
+    alert("Cadastro de operários")
+
+    let somaSalarios: number = 0
+    let maiorSalario: number = 0
+    let nomeMaiorSalario: string = ""
+    let qtdMasculino: number = 0
+    let qtdFeminino: number = 0
+    let qtdTotal: number = 0
+
+    let continuar: string = "S"
+
+    while (continuar === "S" || continuar === "s") {
+        let nome_f: string = String (prompt("Nome do operário: "))
+        let horas: number = Number(prompt("Horas trabalhadas: "))
+        let salarioHora: number = Number(prompt("Salário por hora: "))
+        let sexo_f: string = String (prompt("Sexo (M/F): "))
+
+        let salario: number = horas * salarioHora
+        qtdTotal++;
+        somaSalarios += salario
+
+        if (salario > maiorSalario) {
+            maiorSalario = salario
+            nomeMaiorSalario = nome_f
+        }
+
+        if (sexo_f === "M" || sexo_f === "m") {
+            qtdMasculino++
+        } else if (sexo_f === "F" || sexo_f === "f") {
+            qtdFeminino++
+        }
+
+        continuar = String (prompt("Deseja continuar? (S/N): "))
+    }
+
+    let percMasculino: number = 0
+    let percFeminino: number = 0
+    if (qtdTotal > 0) {
+        percMasculino = (qtdMasculino / qtdTotal) * 100
+        percFeminino = (qtdFeminino / qtdTotal) * 100
+    }
+
+    alert(
+        "=== RELATÓRIO ===\n\n" +
+        "Salário total dos funcionários: R$ " + somaSalarios.toFixed(2) +
+        "\nMaior salário: R$ " + maiorSalario.toFixed(2) + " (recebido por " + nomeMaiorSalario + ")" +
+        "\n\nNúmero de homens cadastrados: " + qtdMasculino +
+        "\nNúmero de mulheres cadastradas: " + qtdFeminino +
+        "\n\nPercentual de homens: " + percMasculino.toFixed(1) + "%" +
+        "\nPercentual de mulheres: " + percFeminino.toFixed(1) + "%"
+    )`,
 
 //Q4
     'btn-q18': `4 - Faça um programa que leia um conjunto de números (X) e imprima a quantidade de
 números pares (QPares) e a quantidade de números ímpares (QImpares) lidos. Admita que o
-valor -1 é utilizado como sentinela para fim de leitura.`,
+valor -1 é utilizado como sentinela para fim de leitura.
+
+    alert("Contador de pares e ímpares (-1 para sair)")
+
+    let QPares: number = 0
+    let QImpares: number = 0
+    let X: number = Number(prompt("Digite um número (-1 para encerrar): "))
+
+    while (X !== -1) {
+        if (X % 2 === 0) {
+            QPares++
+        } else {
+            QImpares++
+        }
+        X = Number(prompt("Digite outro número (-1 para encerrar): "))
+    }
+
+    alert("Quantidade de pares: " + QPares + "\nQuantidade de ímpares: " + QImpares)`,
 
 //Q5
     'btn-q19': `5 - Analisador de Desempenho de Vendas (Relatório de Equipe)
@@ -549,14 +716,96 @@ o Se valor > 5000: Retorna "Ouro"
 3. Ao final, o programa deve exibir:
 ● O total de vendas da equipe (soma).
 ● Quem foi o vendedor com a maior venda (maior valor digitado).
-● Quantos vendedores atingiram a categoria "Ouro".`,
+● Quantos vendedores atingiram a categoria "Ouro".
+
+    alert("Analisador de Desempenho de Vendas")
+
+    let totalVendas: number = 0
+    let maiorVenda: number = 0
+    let vendedorMaior: number = 0
+    let qtdOuro: number = 0
+
+    function classificarVenda(valor: number): string {
+        if (valor < 1000) {
+            return "Bronze"
+        } else if (valor >= 1000 && valor <= 5000) {
+            return "Prata"
+        } else {
+            return "Ouro"
+        }
+    }
+
+    for (let i: number = 1; i <= 5; i++) {
+        let venda: number = Number(prompt("Digite o valor da venda do vendedor " + i + ": "));
+        totalVendas += venda
+
+        if (venda > maiorVenda) {
+            maiorVenda = venda
+            vendedorMaior = i
+        }
+
+        let categoria: string = classificarVenda(venda);
+        if (categoria === "Ouro") {
+            qtdOuro++
+        }
+
+        alert("Vendedor " + i + " - Categoria: " + categoria)
+    }
+
+    alert(
+        " RELATÓRIO DA EQUIPE \n\n" +
+        "Total de vendas: R$ " + totalVendas.toFixed(2) +
+        "\nMaior venda: R$ " + maiorVenda.toFixed(2) + " (Vendedor " + vendedorMaior + ")" +
+        "\nVendedores Ouro: " + qtdOuro)`,
 
 //Q1 (ARRAY)
     'btn-q20': `1 - Mostre-me as seguintes listas, derivadas de: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 a) Números pares
 b) Números ímpares
 c) Todos os múltiplos de 2,3 e 4
-d) Lista reversa`,
+d) Lista reversa
+
+    alert("Derivadas de: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]")
+    let numeros: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+    
+    let pares: number[] = [];
+    for (let i: number = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+            pares.push(numeros[i])
+        }
+    }
+
+    
+    let impares: number[] = []
+    for (let i: number = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 !== 0) {
+            impares.push(numeros[i])
+        }
+    }
+
+    
+    let multiplos2_3_4: number[] = []
+    for (let i: number = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0 && numeros[i] % 3 === 0 && numeros[i] % 4 === 0) {
+            multiplos2_3_4.push(numeros[i])
+        }
+    }
+
+   
+    let reversa: number[] = []
+    for (let i: number = numeros.length - 1; i >= 0; i--) {
+        reversa.push(numeros[i])
+    }
+
+    
+    alert(
+        "Listas derivadas de [0..15]:\n\n" +
+        "a) Pares: " + pares.join(", ") + "\n" +
+        "b) Ímpares: " + impares.join(", ") + "\n" +
+        "c) Múltiplos de 2, 3 e 4: " + multiplos2_3_4.join(", ") + "\n" +
+        "d) Lista reversa: " + reversa.join(", ")
+    )`,
 
 //Q2
     'btn-q21': `2 - Faça um programa que leia um número indeterminado de notas ou -1 para encerrar. Após esta
@@ -566,7 +815,60 @@ b) Exiba todas as notas na ordem em que foram informadas.
 c) Exiba todas as notas na ordem inversa à que foram informadas.
 d) Calcule e mostre a soma das notas.
 e) Calcule e mostre a média das notas.
-f) Calcule e mostre a quantidade de notas acima da média calculada.`,
+f) Calcule e mostre a quantidade de notas acima da média calculada.
+
+    alert("Ler um número indeterminado de notas ou -1 para encerrar")
+    let notas: number[] = []
+    let nota: number = Number(prompt("Digite uma nota (-1 para encerrar): "))
+
+    while (nota !== -1) {
+        notas.push(nota)
+        nota = Number(prompt("Digite outra nota (-1 para encerrar): "))
+    }
+
+    let quantidade: number = notas.length
+    if (quantidade === 0) {
+        alert("Nenhuma nota foi informada.")
+        return
+    }
+
+
+    let ordemOriginal: string = notas.join(", ")
+
+
+    let ordemInversa: string = ""
+    for (let i: number = quantidade - 1; i >= 0; i--) {
+        ordemInversa += notas[i]
+        if (i > 0) {
+            ordemInversa += ", "
+        }
+    }
+
+
+    let soma: number = 0
+    for (let i: number = 0; i < quantidade; i++) {
+        soma += notas[i]
+    }
+
+
+    let media: number = soma / quantidade
+
+
+    let acimaMedia: number = 0
+    for (let i: number = 0; i < quantidade; i++) {
+        if (notas[i] > media) {
+            acimaMedia++
+        }
+    }
+
+    alert(
+        " RELATÓRIO DE NOTAS \n\n" +
+        "Quantidade de notas: " + quantidade + "\n\n" +
+        "Ordem original: " + ordemOriginal + "\n" +
+        "Ordem inversa: " + ordemInversa + "\n\n" +
+        "Soma: " + soma.toFixed(2) + "\n" +
+        "Média: " + media.toFixed(2) + "\n" +
+        "Notas acima da média: " + acimaMedia)`,
 
 //Q3
     'btn-q22': `3 - Gerador de Lista de Compras Personalizada
@@ -576,7 +878,74 @@ Crie uma função chamada gerar_lista_compras() que não recebe argumentos. A fu
 ● Permitir que o usuário adicione itens à lista(array) até que ele digite "fim".
 ● Permitir que o usuário apresente todos os itens da lista.
 ● Permitir que o usuário apresente quantos itens há na lista.
-● Permitir que o usuário remova itens da lista.`,
+● Permitir que o usuário remova itens da lista.
+
+    alert("Gerador de Lista de Compras Personalizada")
+    function gerar_lista_compras(): void {
+        let lista: string[] = []
+        let opcao_l: string = ""
+
+        while (opcao_l !== "5") {
+            opcao_l = String (prompt(
+                "MENU\n1 - Adicionar itens\n2 - Listar itens\n3 - Quantidade de itens\n4 - Remover item\n5 - Sair"
+            ))
+
+            if (opcao_l === "1") {
+
+                let continuar: boolean = true
+                while (continuar) {
+                    let nomeItem: string | null = prompt("Nome do item (ou 'fim' para voltar ao menu):")
+                    if (nomeItem === null || nomeItem.toLowerCase() === "fim") {
+                        continuar = false
+                    } else {
+                        let quantidade: number = Number(prompt("Quantidade:"))
+                        lista.push(nomeItem + " - " + quantidade)
+                    }
+                }
+            } else if (opcao_l === "2") {
+
+                if (lista.length === 0) {
+                    alert("Lista vazia.")
+                } else {
+                    let texto: string = "Lista de compras:\n";
+                    for (let i: number = 0; i < lista.length; i++) {
+                        texto += (i + 1) + ". " + lista[i] + "\n"
+                    }
+                    alert(texto)
+                }
+            } else if (opcao_l === "3") {
+
+                alert("Total de itens na lista: " + lista.length)
+            } else if (opcao_l === "4") {
+
+                if (lista.length === 0) {
+                    alert("Lista vazia, nada a remover.")
+                } else {
+                    let texto: string = "Escolha o número do item para remover:\n";
+                    for (let i: number = 0; i < lista.length; i++) {
+                        texto += (i + 1) + ". " + lista[i] + "\n"
+                    }
+                    let num: string | null = prompt(texto)
+                    if (num !== null) {
+                        let indice: number = Number(num) - 1
+                        if (indice >= 0 && indice < lista.length) {
+                            lista.splice(indice, 1)
+                            alert("Item removido.")
+                        } else {
+                            alert("Número inválido.")
+                        }
+                    }
+                }
+            } else if (opcao_l === "5") {
+                alert("Encerrando lista de compras.")
+                return
+            } else {
+                alert("Opção inválida. Tente novamente.")
+            }
+        }
+    }
+
+    gerar_lista_compras()`,
 
 //Q4
     'btn-q23': `4 - Calculadora de Média do ENEM
@@ -586,7 +955,39 @@ Crie uma função chamada calcular_media(notas) que receba um array de notas com
 A função deve:
 ● Calcular a média das notas.
 ● Arredondar a média para duas casas decimais.
-● Retornar o valor da média.`,
+● Retornar o valor da média.
+
+    alert("Calculadora de Média do ENEM")
+    function calcular_media(notas: number[]): number {
+        let soma: number = 0
+        for (let i: number = 0; i < notas.length; i++) {
+            soma += notas[i]
+        }
+        let media: number = soma / notas.length
+        
+        let mediaArredondada: number = Math.round(media * 100) / 100
+        return mediaArredondada
+    }
+
+    let entrada: string | null = prompt("Digite as notas separadas por vírgula (ex: 7.5,8,6.9):")
+    if (entrada === null || entrada.trim() === "") {
+        alert("Nenhuma nota fornecida.")
+        return
+    }
+    let partes: string[] = entrada.split(",")
+    let notas: number[] = []
+    for (let i: number = 0; i < partes.length; i++) {
+        let valor: number = Number(partes[i].trim())
+        if (!isNaN(valor)) {
+            notas.push(valor)
+        }
+    }
+    if (notas.length === 0) {
+        alert("Nenhuma nota válida.")
+        return
+    }
+    let media: number = calcular_media(notas)
+    alert("Média: " + media.toFixed(2))`,
 
 //Q5
     'btn-q24': `5 - Organizador de Tarefas Diárias
@@ -597,14 +998,97 @@ b) Permitir que o usuário marque tarefas como concluídas (removendo-as da list
 exemplo).
 c) Permitir que o usuário exiba todas as tarefas pendentes.
 Utilize um menu interativo com opções (adicionar, concluir, exibir, sair) e um laço while para
-manter o programa rodando até o usuário escolher sair.`,
+manter o programa rodando até o usuário escolher sair.
+
+    alert("Organizador de Tarefas Diárias")
+
+    function gerenciar_tarefas(): void {
+        let tarefas: string[] = []
+        let opcao_t: string = ""
+
+        while (opcao_t !== "4") {
+            opcao_t = String (prompt(
+                "MENU\n1 - Adicionar tarefa\n2 - Concluir tarefa (remover)\n3 - Exibir pendentes\n4 - Sair"
+            ))
+
+            if (opcao_t === "1") {
+                let novaTarefa: string | null = prompt("Digite a tarefa:")
+                if (novaTarefa !== null && novaTarefa.trim() !== "") {
+                    tarefas.push(novaTarefa)
+                    alert("Tarefa adicionada.")
+                } else {
+                    alert("Tarefa inválida.")
+                }
+            } else if (opcao_t === "2") {
+                if (tarefas.length === 0) {
+                    alert("Nenhuma tarefa pendente.")
+                } else {
+                    let lista: string = "Escolha o número da tarefa para concluir:\n"
+                    for (let i: number = 0; i < tarefas.length; i++) {
+                        lista += (i + 1) + ". " + tarefas[i] + "\n"
+                    }
+                    let escolha: string | null = prompt(lista)
+                    if (escolha !== null) {
+                        let indice: number = Number(escolha) - 1
+                        if (indice >= 0 && indice < tarefas.length) {
+                            tarefas.splice(indice, 1);
+                            alert("Tarefa concluída e removida.")
+                        } else {
+                            alert("Número inválido.")
+                        }
+                    }
+                }
+            } else if (opcao_t === "3") {
+                if (tarefas.length === 0) {
+                    alert("Nenhuma tarefa pendente.")
+                } else {
+                    let lista: string = "Tarefas pendentes:\n";
+                    for (let i: number = 0; i < tarefas.length; i++) {
+                        lista += (i + 1) + ". " + tarefas[i] + "\n"
+                    }
+                    alert(lista)
+                }
+            } else if (opcao_t === "4") {
+                alert("Encerrando organizador de tarefas.")
+                return
+            } else {
+                alert("Opção inválida. Tente novamente.")
+            }
+        }
+    }
+
+    gerenciar_tarefas()`,
 
 //Q6
     'btn-q25': `6 - Crie um Array vazio que irá armazenar 15 nomes de pessoas (usando laço de repetição);
 a) Pedir os nomes das pessoas usando o Prompt e o método push();
 b) Apresentar os nomes digitados;
 c) Ordenar o vetor usando o sort();
-d) Apresentar os nomes inseridos de forma ordenada.`,
+d) Apresentar os nomes inseridos de forma ordenada.
+
+    alert("Armazena 15 nomes de pessoas")
+    let nomes: string[] = []
+
+
+    for (let i: number = 1; i <= 15; i++) {
+        let nome: string | null = prompt("Digite o " + i + "º nome:")
+        if (nome !== null) {
+            nomes.push(nome)
+        } else {
+            nomes.push("")
+        }
+    }
+
+
+    let original: string = "Ordem original:\n" + nomes.join("\n")
+    alert(original)
+
+
+    nomes.sort()
+
+
+    let ordenado: string = "Ordem alfabética:\n" + nomes.join("\n")
+    alert(ordenado)`,
 
 //Q7
     'btn-q26': `7 - Lista de Presença
@@ -612,7 +1096,29 @@ d) Apresentar os nomes inseridos de forma ordenada.`,
 1. Crie um array chamado presenca que aceite apenas strings.
 2. Adicione 5 nomes de alunos.
 3. Tente adicionar um número e observe o erro do compilador.
-4. Use um loop para imprimir cada nome em letras maiúsculas.`,
+4. Use um loop para imprimir cada nome em letras maiúsculas.
+
+    alert("Lista de Presença")
+    let presenca: string[] = []
+
+   
+    for (let i: number = 1; i <= 5; i++) {
+        let nome: string | null = prompt("Digite o nome do " + i + "º aluno:")
+        if (nome !== null) {
+            presenca.push(nome)
+        } else {
+            presenca.push("")
+        }
+    }
+
+    alert("Lista de presença adicionada com sucesso!")
+
+
+    let listaMaiuscula: string = "Lista de presença (maiúsculas):\n"
+    for (let i: number = 0; i < presenca.length; i++) {
+        listaMaiuscula += presenca[i].toUpperCase() + "\n"
+    }
+    alert(listaMaiuscula)`,
 
 //Q8
     'btn-q27': `8 - Boletim Híbrido
@@ -621,7 +1127,29 @@ Avaliado).
 2. Insira os valores: 8.5, 10, "N.A", 7.2.
 3. Crie uma lógica que percorra o array e:
 ● Se for um número, imprima: "Nota: [valor]".
-● Se for "N.A", imprima:"O aluno não realizou a prova".`,
+● Se for "N.A", imprima:"O aluno não realizou a prova".
+
+
+    alert("Boletim Híbrido")
+    let notasSemestre: (number | string)[] = []
+
+
+    notasSemestre.push(8.5)
+    notasSemestre.push(10)
+    notasSemestre.push("N.A")
+    notasSemestre.push(7.2)
+
+    let resultado: string = ""
+    for (let i: number = 0; i < notasSemestre.length; i++) {
+        let elemento: number | string = notasSemestre[i]
+        if (elemento === "N.A") {
+            resultado += "O aluno não realizou a prova\n"
+        } else {
+            resultado += "Nota: " + elemento + "\n"
+        }
+    }
+
+    alert(resultado)`,
 
 //Q9
     'btn-q28': `9 - Implemente uma função chamada gerarIntervaloFiltrado que receba dois parâmetros numéricos:
@@ -634,7 +1162,27 @@ contidos nesse intervalo (inclusive o início e o fim).
 ● Após preencher o array, utilize um novo laço de repetição (ou um método de array) para percorrer
 a lista criada.
 ● Imprima no console apenas os números que são múltiplos e divisores da sua idade.
-● Ao final, exiba a quantidade total de números que foram impressos.`,
+● Ao final, exiba a quantidade total de números que foram impressos.
+
+    alert("Multiplos de 3 no intervalo de números")
+    let inicio: number = Number(prompt("Digite o número inicial: "))
+    let fim: number = Number(prompt("Digite o número final: "))
+
+
+    let intervalo: number[] = []
+    for (let i: number = inicio; i <= fim; i++) {
+        intervalo.push(i)
+    }
+
+
+    let multiplos: string = "Múltiplos de 3:\n"
+    for (let i: number = 0; i < intervalo.length; i++) {
+        if (intervalo[i] % 3 === 0) {
+            multiplos += intervalo[i] + "\n"
+        }
+    }
+
+    alert(multiplos)`,
 
 //Q10
     'btn-q29': ``,
