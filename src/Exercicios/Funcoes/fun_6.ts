@@ -14,6 +14,62 @@
 // Imprima na tela as informações, dispostas conforme o exemplo abaixo. No exemplo o valor da hora
 // é R$15,00 e a quantidade de horas é 220.
 
-export function fun_6(){
+export function fun_6(): void {
     
+    alert("Cálculo de Folha de Pagamento")
+    
+    let valorHora: number = Number(prompt("Digite o valor da sua hora (R$): "))
+    let horasTrabalhadas: number = Number(prompt("Digite a quantidade de horas trabalhadas no mês: "))
+    
+    function calcularFolha(valorHora: number, horas: number): void {
+       
+        let salarioBruto: number = valorHora * horas
+        
+    
+        let ir: number = 0
+        let aliquotaIR: number = 0
+    
+        if (salarioBruto <= 2428.80) {
+            ir = 0
+            aliquotaIR = 0
+        } else if (salarioBruto <= 2826.65) {
+            ir = salarioBruto * 0.075
+            aliquotaIR = 7.5
+        } else if (salarioBruto <= 3751.05) {
+            ir = salarioBruto * 0.15
+            aliquotaIR = 15
+        } else if (salarioBruto <= 4664.68) {
+            ir = salarioBruto * 0.225
+            aliquotaIR = 22.5
+        } else {
+            ir = salarioBruto * 0.275
+            aliquotaIR = 27.5;
+        }
+        
+        
+        let sindicato: number = salarioBruto * 0.03   
+        let valeTransporte: number = salarioBruto * 0.06
+        let valeAlimentacao: number = salarioBruto * 0.08
+        let inss: number = salarioBruto * 0.10
+        let fgts: number = salarioBruto * 0.11
+        
+        let totalDescontos: number = ir + sindicato + valeTransporte + valeAlimentacao + inss
+        let salarioLiquido: number = salarioBruto - totalDescontos
+        
+        
+        alert(
+            "=== FOLHA DE PAGAMENTO ===\n\n" +
+            "Salário Bruto: (" + valorHora + " * " + horas + ")\t: R$ " + salarioBruto.toFixed(2) +
+            "\n\n(-) IR (" + aliquotaIR + "%)\t\t\t: R$ " + ir.toFixed(2) +
+            "\n(-) Sindicato (3%)\t\t: R$ " + sindicato.toFixed(2) +
+            "\n(-) Vale Transporte (6%)\t\t: R$ " + valeTransporte.toFixed(2) +
+            "\n(-) Vale Alimentação (8%)\t: R$ " + valeAlimentacao.toFixed(2) +
+            "\n(-) INSS (10%)\t\t\t: R$ " + inss.toFixed(2) +
+            "\n\nFGTS (11% - não descontado)\t: R$ " + fgts.toFixed(2) +
+            "\nTotal de descontos\t\t: R$ " + totalDescontos.toFixed(2) +
+            "\nSalário Líquido\t\t\t: R$ " + salarioLiquido.toFixed(2)
+        )
+    }
+    
+    calcularFolha(valorHora, horasTrabalhadas)
 }
