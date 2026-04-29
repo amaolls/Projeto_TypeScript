@@ -293,7 +293,24 @@ para ir subtraindo do valor total.
 
 //Q5
     'btn-q9': `5 - Crie uma função que recebe dois números: início e fim. Depois use um laço para percorrer
-esse intervalo e imprimir apenas os números que são múltiplos de 3.`,
+esse intervalo e imprimir apenas os números que são múltiplos de 3.
+
+    alert("Múltiplos de 3 em um intervalo")
+    
+    let inicio: number = Number(prompt("Digite o número inicial: "))
+    let fim: number = Number(prompt("Digite o número final: "))
+    
+    function multiplosDeTres(inicio: number, fim: number): void {
+        console.log("Múltiplos de 3 entre " + inicio + " e " + fim + ":")
+        
+        for (let i: number = inicio; i <= fim; i++) {
+            if (i % 3 === 0) {
+                console.log(i)
+            }
+        }
+    }
+    
+    multiplosDeTres(inicio, fim)`,
 
 //Q6
     'btn-q10': `6 - Faça um programa para o cálculo de uma folha de pagamento fictício, sabendo que os
@@ -310,7 +327,65 @@ Desconto do IR:
 4. Salário Bruto de R$ 3.751,06 a R$ 4.664,68 (inclusive) - desconto de 22,5%
 5. Salário Bruto acima de R$4664,68 - desconto de 27,5%.
 Imprima na tela as informações, dispostas conforme o exemplo abaixo. No exemplo o valor da hora
-é R$15,00 e a quantidade de horas é 220.`,
+é R$15,00 e a quantidade de horas é 220.
+
+
+ alert("Cálculo de Folha de Pagamento")
+    
+    let valorHora: number = Number(prompt("Digite o valor da sua hora (R$): "))
+    let horasTrabalhadas: number = Number(prompt("Digite a quantidade de horas trabalhadas no mês: "))
+    
+    function calcularFolha(valorHora: number, horas: number): void {
+       
+        let salarioBruto: number = valorHora * horas
+        
+    
+        let ir: number = 0
+        let aliquotaIR: number = 0
+    
+        if (salarioBruto <= 2428.80) {
+            ir = 0
+            aliquotaIR = 0
+        } else if (salarioBruto <= 2826.65) {
+            ir = salarioBruto * 0.075
+            aliquotaIR = 7.5
+        } else if (salarioBruto <= 3751.05) {
+            ir = salarioBruto * 0.15
+            aliquotaIR = 15
+        } else if (salarioBruto <= 4664.68) {
+            ir = salarioBruto * 0.225
+            aliquotaIR = 22.5
+        } else {
+            ir = salarioBruto * 0.275
+            aliquotaIR = 27.5;
+        }
+        
+        
+        let sindicato: number = salarioBruto * 0.03   
+        let valeTransporte: number = salarioBruto * 0.06
+        let valeAlimentacao: number = salarioBruto * 0.08
+        let inss: number = salarioBruto * 0.10
+        let fgts: number = salarioBruto * 0.11
+        
+        let totalDescontos: number = ir + sindicato + valeTransporte + valeAlimentacao + inss
+        let salarioLiquido: number = salarioBruto - totalDescontos
+        
+        
+        alert(
+            " FOLHA DE PAGAMENTO \n\n" +
+            "Salário Bruto: (" + valorHora + " * " + horas + ")\t: R$ " + salarioBruto.toFixed(2) +
+            "\n\n(-) IR (" + aliquotaIR + "%): R$ " + ir.toFixed(2) +
+            "\n(-) Sindicato (3%): R$ " + sindicato.toFixed(2) +
+            "\n(-) Vale Transporte (6%): R$ " + valeTransporte.toFixed(2) +
+            "\n(-) Vale Alimentação (8%): R$ " + valeAlimentacao.toFixed(2) +
+            "\n(-) INSS (10%): R$ " + inss.toFixed(2) +
+            "\n\nFGTS (11% - não descontado): R$ " + fgts.toFixed(2) +
+            "\nTotal de descontos: R$ " + totalDescontos.toFixed(2) +
+            "\nSalário Líquido: R$ " + salarioLiquido.toFixed(2)
+        )
+    }
+    
+    calcularFolha(valorHora, horasTrabalhadas)`,
 
 //Q7
     'btn-q11': `7 - Sistema de Eficiência de Combustível
@@ -318,7 +393,39 @@ Crie um programa que ajude um motorista a saber a autonomia do seu carro.
 ● Função 1: Recebe a distância percorrida e a quantidade de combustível gasta, retornando
 o consumo médio (km/l).
 ● Função 2: Recebe o consumo médio e a capacidade total do tanque, retornando quantos
-quilômetros o carro percorre com o tanque cheio.`,
+quilômetros o carro percorre com o tanque cheio.
+
+    alert("Teste a autonomia do seu carro")
+    
+    let Distancia_P: number = Number(prompt("Digite a distância percorrida (km): "))
+    let Quantidade_C: number = Number(prompt("Digite a quantidade de combustível gasto (litros): "))
+    let Capacidade_Tanque: number = Number(prompt("Digite a capacidade total do tanque (litros): "))
+    
+    
+    function Consumo_Medio(distancia: number, combustivel: number): number {
+        let consumo: number = distancia / combustivel
+        return consumo
+    }
+    
+    
+    function Tanque_Cheio(consumoMedio: number, capacidadeTanque: number): number {
+        let autonomia: number = consumoMedio * capacidadeTanque
+        return autonomia
+    }
+    
+    
+    let kmPorLitro: number = Consumo_Medio(Distancia_P, Quantidade_C)
+    let autonomiaTotal: number = Tanque_Cheio(kmPorLitro, Capacidade_Tanque)
+    
+    
+    alert(
+        " AUTONOMIA DO VEÍCULO \n\n" +
+        "Distância percorrida: " + Distancia_P + " km\n" +
+        "Combustível gasto: " + Quantidade_C + " litros\n" +
+        "Consumo médio: " + kmPorLitro.toFixed(2) + " km/l\n\n" +
+        "Capacidade do tanque: " + Capacidade_Tanque + " litros\n" +
+        "Autonomia com tanque cheio: " + autonomiaTotal.toFixed(2) + " km"
+    )`,
 
 //Q8
     'btn-q12': `8 - Controle de Estoque de Loja (Loop e Relatório)
