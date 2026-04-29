@@ -5,6 +5,8 @@
 // 4 - Divisão
 // Use switch...Case
 export function cond_3() {
+
+    alert("Calculadora simples")
     let P_entrada: number = Number(prompt("Digite o primeiro número: "))
     let S_entrada: number = Number(prompt("Digite o segundo número: "))
     let opcao: number = Number(prompt("Escolha a operação:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão"))
