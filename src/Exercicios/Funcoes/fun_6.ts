@@ -58,16 +58,16 @@ export function fun_6(): void {
         
         
         alert(
-            "=== FOLHA DE PAGAMENTO ===\n\n" +
+            " FOLHA DE PAGAMENTO \n\n" +
             "Salário Bruto: (" + valorHora + " * " + horas + ")\t: R$ " + salarioBruto.toFixed(2) +
-            "\n\n(-) IR (" + aliquotaIR + "%)\t\t\t: R$ " + ir.toFixed(2) +
-            "\n(-) Sindicato (3%)\t\t: R$ " + sindicato.toFixed(2) +
-            "\n(-) Vale Transporte (6%)\t\t: R$ " + valeTransporte.toFixed(2) +
-            "\n(-) Vale Alimentação (8%)\t: R$ " + valeAlimentacao.toFixed(2) +
-            "\n(-) INSS (10%)\t\t\t: R$ " + inss.toFixed(2) +
+            "\n\n(-) IR (" + aliquotaIR + "%): R$ " + ir.toFixed(2) +
+            "\n(-) Sindicato (3%): R$ " + sindicato.toFixed(2) +
+            "\n(-) Vale Transporte (6%): R$ " + valeTransporte.toFixed(2) +
+            "\n(-) Vale Alimentação (8%): R$ " + valeAlimentacao.toFixed(2) +
+            "\n(-) INSS (10%): R$ " + inss.toFixed(2) +
             "\n\nFGTS (11% - não descontado)\t: R$ " + fgts.toFixed(2) +
-            "\nTotal de descontos\t\t: R$ " + totalDescontos.toFixed(2) +
-            "\nSalário Líquido\t\t\t: R$ " + salarioLiquido.toFixed(2)
+            "\nTotal de descontos: R$ " + totalDescontos.toFixed(2) +
+            "\nSalário Líquido: R$ " + salarioLiquido.toFixed(2)
         )
     }
     
