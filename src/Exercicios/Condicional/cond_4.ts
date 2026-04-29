@@ -10,10 +10,13 @@ export function cond_4(): void {
     let num2: number = Number(prompt("Digite o segundo número: "))
 
     if (num1 === num2) {
-        alert("Números iguais")
+       
+        alert("Números digitados: "+num1+", "+num2+"\n Números iguais")
     } else if (num1 > num2) {
-        alert("Primeiro é maior")
+        
+        alert("Números digitados: "+num1+", "+num2+"\n Primeiro é maior")
     } else {
-        alert("Segundo maior")
+        
+        alert("Números digitados: "+num1+", "+num2+"\n Segundo maior")
     }
 }
