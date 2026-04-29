@@ -12,6 +12,44 @@
 //  Quem foi o vendedor com a maior venda (maior valor digitado).
 //  Quantos vendedores atingiram a categoria Ouro;.
 
-export function rep_5(){
+export function rep_5(): void {
+    alert("Analisador de Desempenho de Vendas")
 
+    let totalVendas: number = 0
+    let maiorVenda: number = 0
+    let vendedorMaior: number = 0
+    let qtdOuro: number = 0
+
+    function classificarVenda(valor: number): string {
+        if (valor < 1000) {
+            return "Bronze"
+        } else if (valor >= 1000 && valor <= 5000) {
+            return "Prata"
+        } else {
+            return "Ouro"
+        }
+    }
+
+    for (let i: number = 1; i <= 5; i++) {
+        let venda: number = Number(prompt("Digite o valor da venda do vendedor " + i + ": "));
+        totalVendas += venda
+
+        if (venda > maiorVenda) {
+            maiorVenda = venda
+            vendedorMaior = i
+        }
+
+        let categoria: string = classificarVenda(venda);
+        if (categoria === "Ouro") {
+            qtdOuro++
+        }
+
+        alert("Vendedor " + i + " - Categoria: " + categoria)
+    }
+
+    alert(
+        " RELATÓRIO DA EQUIPE \n\n" +
+        "Total de vendas: R$ " + totalVendas.toFixed(2) +
+        "\nMaior venda: R$ " + maiorVenda.toFixed(2) + " (Vendedor " + vendedorMaior + ")" +
+        "\nVendedores Ouro: " + qtdOuro)
 }
