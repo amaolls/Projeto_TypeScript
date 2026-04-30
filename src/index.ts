@@ -1270,9 +1270,3 @@ seletor.addEventListener('change', (event) => {
         exibirCodigo(btnId);
     }
 });
-
-
-
-
-
-
