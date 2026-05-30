@@ -26,3 +26,5 @@ class Quadrado{
     }
     
 }
+
+let quadrado:Quadrado = new Quadrado (10)
