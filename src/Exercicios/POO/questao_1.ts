@@ -6,21 +6,32 @@
 
 class Bola {
 
-    private cor: string
-    private circunferencia: number
-    private material: string
+     cor: string
+     circunferencia: number
+     material: string
 
-    constructor(cor:string, circunferencia:number, material:string){
-        this.cor = cor
-        this.circunferencia = circunferencia
+    constructor(co:string, ci:number, material:string){
+        this.cor = co
+        this.circunferencia = ci
         this.material = material
     }
+    trocarCor(novaCor:string): void{
+        this.cor = novaCor
+    }
+    mostraCor(): string{
+        return this.cor
+    }
+}
 
-    public trocarCor(novaCor:string){
-    this.cor = novaCor
+for(let i=0; i<5; i++){
+
+    let co:string, ci: number, material: string
+    co = "Vermelha"
+    ci = 5
+    material = "Couro"
+
+    let bola_1:Bola = new Bola(co,ci,material)
+
 }
-   public mostraCor(){
-    return this.cor
-}
-}
+
 
