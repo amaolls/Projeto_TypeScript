@@ -10,9 +10,9 @@ class Bola {
      circunferencia: number
      material: string
 
-    constructor(co:string, ci:number, material:string){
-        this.cor = co
-        this.circunferencia = ci
+    constructor(cor:string, circunferencia:number, material:string){
+        this.cor = cor
+        this.circunferencia = circunferencia
         this.material = material
     }
     trocarCor(novaCor:string): void{
@@ -23,15 +23,12 @@ class Bola {
     }
 }
 
-for(let i=0; i<5; i++){
 
-    let co:string, ci: number, material: string
-    co = "Vermelha"
-    ci = 5
-    material = "Couro"
 
-    let bola_1:Bola = new Bola(co,ci,material)
+    let bola_1:Bola = new Bola("vermelha",65,"couro")
+
+     alert(`A bola tem as características:\nCor: ${bola_1.mostraCor()}\nCircunferência: ${bola_1.circunferencia}cm\nMaterial: ${bola_1.material}`)
 
 }
 
-}
+
