@@ -33,6 +33,25 @@ import { Questao_8 } from "./Exercicios/Array/Questao_8.js"
 import { Questao_9 } from "./Exercicios/Array/Questao_9.js"
 import { Questao_10 } from "./Exercicios/Array/Questao_10.js"
 
+import { poo_1 } from "./Exercicios/POO/poo_1.js"
+import { poo_2 } from "./Exercicios/POO/poo_2.js"
+import { poo_3 } from "./Exercicios/POO/poo_3.js"
+import { poo_4 } from "./Exercicios/POO/poo_4.js"
+import { poo_5 } from "./Exercicios/POO/poo_5.js"
+import { poo_6 } from "./Exercicios/POO/poo_6.js"
+import { poo_7 } from "./Exercicios/POO/poo_7.js"
+import { poo_8 } from "./Exercicios/POO/poo_8.js"
+import { poo_9 } from "./Exercicios/POO/poo_9.js"
+import { poo_10 } from "./Exercicios/POO/poo_10.js"
+import { poo_11 } from "./Exercicios/POO/poo_11.js"
+import { poo_12 } from "./Exercicios/POO/poo_12.js"
+import { poo_13 } from "./Exercicios/POO/poo_13.js"
+import { poo_14 } from "./Exercicios/POO/poo_14.js"
+import { poo_15 } from "./Exercicios/POO/poo_15.js"
+import { poo_16 } from "./Exercicios/POO/poo_16.js"
+
+
+
 //linha copia e cola codigo daa questões
 const codigosQuestoes: Record<string, string> = {
 //Q1 (CONDICIONAL)
@@ -1189,7 +1208,43 @@ a lista criada.
 
 //Q10
     'btn-q29': ``,
-};
+
+//POO
+
+    //Q1
+    'btn-q30': ``,
+    //Q2
+    'btn-q31': ``,
+    //Q3
+    'btn-q32': ``,
+    //Q4
+    'btn-q33': ``,
+    //Q5
+    'btn-q34': ``,
+    //Q6
+    'btn-q35': ``,
+    //Q7
+    'btn-q36': ``,
+    //Q8
+    'btn-q37': ``,
+    //Q9
+    'btn-q38': ``,
+    //Q10
+    'btn-q39': ``,
+    //Q11
+    'btn-q40': ``,
+    //Q12
+    'btn-q41': ``,
+    //Q13
+    'btn-q42': ``,
+    //Q14
+    'btn-q43': ``,
+    //Q15
+    'btn-q44': ``,
+    //Q16
+    'btn-q45': ``,
+    
+}
 
 //LGICA DO TERMINAL COPIA CODIGO
 const terminalPre = document.getElementById('terminalCode') as HTMLPreElement;
@@ -1261,6 +1316,30 @@ document.getElementById('btn-q26')?.addEventListener('click', () => { Questao_7(
 document.getElementById('btn-q27')?.addEventListener('click', () => { Questao_8(); exibirCodigo('btn-q27'); });
 document.getElementById('btn-q28')?.addEventListener('click', () => { Questao_9(); exibirCodigo('btn-q28'); });
 document.getElementById('btn-q29')?.addEventListener('click', () => { Questao_10(); exibirCodigo('btn-q29'); });
+
+
+//POO
+document.getElementById('btn-q30')?.addEventListener('click', () => { poo_1(); exibirCodigo('btn-q30'); });
+document.getElementById('btn-q31')?.addEventListener('click', () => { poo_2(); exibirCodigo('btn-q31'); });
+document.getElementById('btn-q32')?.addEventListener('click', () => { poo_3(); exibirCodigo('btn-q32'); });
+document.getElementById('btn-q33')?.addEventListener('click', () => { poo_4(); exibirCodigo('btn-q33'); });
+document.getElementById('btn-q34')?.addEventListener('click', () => { poo_5(); exibirCodigo('btn-q34'); });
+document.getElementById('btn-q35')?.addEventListener('click', () => { poo_6(); exibirCodigo('btn-q35'); });
+document.getElementById('btn-q36')?.addEventListener('click', () => { poo_7(); exibirCodigo('btn-q36'); });
+document.getElementById('btn-q37')?.addEventListener('click', () => { poo_8(); exibirCodigo('btn-q37'); });
+document.getElementById('btn-q38')?.addEventListener('click', () => { poo_9(); exibirCodigo('btn-q38'); });
+document.getElementById('btn-q39')?.addEventListener('click', () => { poo_10(); exibirCodigo('btn-q39'); });
+document.getElementById('btn-q40')?.addEventListener('click', () => { poo_11(); exibirCodigo('btn-q40'); });
+document.getElementById('btn-q41')?.addEventListener('click', () => { poo_12(); exibirCodigo('btn-q41'); });
+document.getElementById('btn-q42')?.addEventListener('click', () => { poo_13(); exibirCodigo('btn-q42'); });
+document.getElementById('btn-q43')?.addEventListener('click', () => { poo_14(); exibirCodigo('btn-q43'); });
+document.getElementById('btn-q44')?.addEventListener('click', () => { poo_15(); exibirCodigo('btn-q44'); });
+document.getElementById('btn-q45')?.addEventListener('click', () => { poo_16(); exibirCodigo('btn-q45'); });
+
+
+
+
+
 //DROPDOWN SELETOR
 const seletor = document.getElementById('seletorQuestao') as HTMLSelectElement;
 seletor.addEventListener('change', (event) => {
