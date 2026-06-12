@@ -1242,11 +1242,95 @@ class Bola {
     let bola_1:Bola = new Bola("vermelha",65,"couro")
 
      alert('A bola tem as características:\nCor: $ {bola_1.mostraCor()}\nCircunferência: $ {bola_1.circunferencia}cm\nMaterial: $ {bola_1.material}')`,
-    //Q2
-    'btn-q31': ``,
-    //Q3
-    'btn-q32': ``,
-    //Q4
+
+
+//Q2
+    'btn-q31': `// Classe Quadrado: Crie uma classe que modele um quadrado:
+//  Atributos: Tamanho do lado
+//  Métodos: Mudar valor do Lado,
+//  Retornar valor do Lado e calcular Área;
+
+
+class Quadrado{
+
+   tamanho_do_lado: number
+
+    constructor(tamanho_do_lado:number){
+        this.tamanho_do_lado = tamanho_do_lado
+    }
+
+    mudar_valor_do_lado (novo_Valor:number){
+            this.tamanho_do_lado = novo_Valor
+    }
+
+    retornar_valor_do_lado (){
+       return this.tamanho_do_lado
+
+    }
+
+    calcular_area (){
+        return this.tamanho_do_lado * this.tamanho_do_lado
+    }
+    
+}
+
+let quadrado:Quadrado = new Quadrado (10)
+
+ alert(
+        'Características do Quadrado:\n' +
+        '- Tamanho do lado: $ {quadrado.retornar_valor_do_lado()}\n' +
+        '- Área total: $ {quadrado.calcular_area()}'
+    )
+} `,
+
+//Q3
+    'btn-q32': `// Classe Retângulo: Crie uma classe que modele um retângulo:
+// A. Atributos: LadoA, LadoB (ou Comprimento e Largura, ou Base e Altura, a escolher)
+// B. Métodos: Mudar valor dos lados,
+//  Retornar valor dos lados,
+//  Calcular Área,
+//  Calcular Perímetro.
+
+    class Retangulo {
+        base: number
+        altura: number
+
+        constructor(base: number, altura: number) {
+            this.base = base
+            this.altura = altura
+        }
+
+        mudar_lados(nova_base: number, nova_altura: number) {
+            this.base = nova_base
+            this.altura = nova_altura
+        }
+
+        retornar_lados() {
+            return { base: this.base, altura: this.altura }
+        }
+
+        calcular_area() {
+            return this.base * this.altura
+        }
+
+        calcular_perimetro() {
+            return 2 * (this.base + this.altura)
+        }
+    }
+
+    let retangulo = new Retangulo(10, 5)
+    let lados = retangulo.retornar_lados()
+
+
+    alert(
+        'Características do Retângulo:\n' +
+        '- Base: $ {lados.base}\n' +
+        '- Altura: $ {lados.altura}\n' +
+        '- Área: $ {retangulo.calcular_area()}\n' +
+        '- Perímetro: $ {retangulo.calcular_perimetro()}'
+    )`,
+
+//Q4
     'btn-q33': ``,
     //Q5
     'btn-q34': ``,
