@@ -23,10 +23,16 @@ class Quadrado{
     }
 
     calcular_area (){
-        this.tamanho_do_lado * this.tamanho_do_lado
+        return this.tamanho_do_lado * this.tamanho_do_lado
     }
     
 }
 
 let quadrado:Quadrado = new Quadrado (10)
+
+ alert(
+        `Características do Quadrado:\n` +
+        `- Tamanho do lado: ${quadrado.retornar_valor_do_lado()}\n` +
+        `- Área total: ${quadrado.calcular_area()}`
+    )
 }
