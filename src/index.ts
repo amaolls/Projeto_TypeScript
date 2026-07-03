@@ -49,6 +49,20 @@ import { poo_13 } from "./Exercicios/POO/poo_13.js"
 import { poo_14 } from "./Exercicios/POO/poo_14.js"
 import { poo_15 } from "./Exercicios/POO/poo_15.js"
 import { poo_16 } from "./Exercicios/POO/poo_16.js"
+import { poo_17 } from "./Exercicios/POO/poo_17.js"
+import { poo_18 } from "./Exercicios/POO/poo_18.js"
+import { poo_19 } from "./Exercicios/POO/poo_19.js"
+import { poo_20 } from "./Exercicios/POO/poo_20.js"
+import { poo_21 } from "./Exercicios/POO/poo_21.js"
+import { poo_22 } from "./Exercicios/POO/poo_22.js"
+import { poo_23 } from "./Exercicios/POO/poo_23.js"
+import { poo_24 } from "./Exercicios/POO/poo_24.js"
+import { poo_25 } from "./Exercicios/POO/poo_25.js"
+import { poo_26 } from "./Exercicios/POO/poo_26.js"
+import { poo_27 } from "./Exercicios/POO/poo_27.js"
+import { poo_28 } from "./Exercicios/POO/poo_28.js"
+import { poo_29 } from "./Exercicios/POO/poo_29.js"
+import { poo_30 } from "./Exercicios/POO/poo_30.js"
 
 
 
@@ -1448,6 +1462,20 @@ document.getElementById('btn-q42')?.addEventListener('click', () => { poo_13(); 
 document.getElementById('btn-q43')?.addEventListener('click', () => { poo_14(); exibirCodigo('btn-q43'); });
 document.getElementById('btn-q44')?.addEventListener('click', () => { poo_15(); exibirCodigo('btn-q44'); });
 document.getElementById('btn-q45')?.addEventListener('click', () => { poo_16(); exibirCodigo('btn-q45'); });
+document.getElementById('btn-q46')?.addEventListener('click', () => { poo_17(); exibirCodigo('btn-q46'); });
+document.getElementById('btn-q47')?.addEventListener('click', () => { poo_18(); exibirCodigo('btn-q47'); });
+document.getElementById('btn-q48')?.addEventListener('click', () => { poo_19(); exibirCodigo('btn-q48'); });
+document.getElementById('btn-q49')?.addEventListener('click', () => { poo_20(); exibirCodigo('btn-q49'); });
+document.getElementById('btn-q50')?.addEventListener('click', () => { poo_21(); exibirCodigo('btn-q50'); });
+document.getElementById('btn-q51')?.addEventListener('click', () => { poo_22(); exibirCodigo('btn-q51'); });
+document.getElementById('btn-q52')?.addEventListener('click', () => { poo_23(); exibirCodigo('btn-q52'); });
+document.getElementById('btn-q53')?.addEventListener('click', () => { poo_24(); exibirCodigo('btn-q53'); });
+document.getElementById('btn-q54')?.addEventListener('click', () => { poo_25(); exibirCodigo('btn-q54'); });
+document.getElementById('btn-q55')?.addEventListener('click', () => { poo_26(); exibirCodigo('btn-q55'); });
+document.getElementById('btn-q56')?.addEventListener('click', () => { poo_27(); exibirCodigo('btn-q56'); });
+document.getElementById('btn-q57')?.addEventListener('click', () => { poo_28(); exibirCodigo('btn-q57'); });
+document.getElementById('btn-q58')?.addEventListener('click', () => { poo_29(); exibirCodigo('btn-q58'); });
+document.getElementById('btn-q59')?.addEventListener('click', () => { poo_30(); exibirCodigo('btn-q59'); });
 
 
 
