@@ -1,3 +1,5 @@
+//encapsulamento
+
 class funcionario{
     public nome: string
     public sobrenome: string
@@ -11,22 +13,43 @@ class funcionario{
         this._salarioBase = salarioBase
     }
 
-    get idade (){
+    get idade ():number{
+        return this._idade
 
     }
-    set idade (){
-
+    set idade (idade:number){
+        this._idade= idade
     }
     get salarioBase(){
-
+        return this._salarioBase
     }
-    set salarioBase(){
-
+    set salarioBase(salario:number){
+            this._salarioBase = salario
     }
 }
 
 class Gerente extends funcionario{
     private _bonus: number = 500
+    
+    get bonus (): number {
+        return this._bonus
+    }
+    constructor(nome:string, sobrenome:string, idade: number, salarioBase: number, nivel: string)
+    this.nome = nome
+    this.sobrenome = sobrenome
+    this._idade = idade
+    
+    calcularNovoSalario():number{
+        let novoSalario = this.salarioBase + this._bonus
+        return novoSalario
+ 
+   }
+   public exibirFuncionario ():void{
+
+   }
+
+class desenvolvedor extends funcionario{
+    private _bonus: number = 1500
 
     get bonus (): number {
         return this._bonus
@@ -35,5 +58,14 @@ class Gerente extends funcionario{
     calcularNovoSalario():number{
         let novoSalario = this.salarioBase + this._bonus
         return novoSalario
-    }
+ 
+   }
+
+   public exibirFuncionario ():void{
+
+   }
+
+
 }
+
+let Funcionario = new funcionario()
