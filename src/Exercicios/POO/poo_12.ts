@@ -5,7 +5,7 @@
 export function poo_12() {
   class Aluguel {
     public modelo: string
-    private _valorDiaria: number
+    private _valorDiaria: number = 200
     public qtDias: number
 
     constructor(modelo: string, valorDiaria: number, qtDias: number) {
