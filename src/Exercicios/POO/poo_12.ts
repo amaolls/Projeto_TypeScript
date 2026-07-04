@@ -17,7 +17,7 @@ export function poo_12() {
       return this._valorDiaria
     }
 
-    exibirResumo(): void {
+    TotalAluguel(): void {
       const total = this._valorDiaria * this.qtDias
       
       const resumo = `Resumo da Locação\n` +
@@ -42,10 +42,10 @@ export function poo_12() {
       const qtDias = parseInt(prompt("Digite a quantidade de dias:") || "0")
 
       locacao = new Aluguel(modelo, qtDias)
-      locacao.exibirResumo()
+      locacao.TotalAluguel()
     } else if (opcao === 2) {
       if (locacao) {
-        locacao.exibirResumo()
+        locacao.TotalAluguel()
       } else {
         alert("Nenhuma locação ativa encontrada.")
       }
