@@ -8,9 +8,8 @@ export function poo_12() {
     private _valorDiaria: number = 200
     public qtDias: number
 
-    constructor(modelo: string, valorDiaria: number, qtDias: number) {
+    constructor(modelo: string, qtDias: number) {
       this.modelo = modelo
-      this._valorDiaria = valorDiaria
       this.qtDias = qtDias
     }
 
@@ -18,16 +17,16 @@ export function poo_12() {
       return this._valorDiaria
     }
 
-    set vDiaria(valor: number) {
-      this._valorDiaria = valor
-    }
-    totalAluguel(): void {
+    exibirResumo(): void {
       const total = this._valorDiaria * this.qtDias
-      console.log(`\n=== Resumo da Locação ===`)
-      console.log(`Carro: ${this.modelo}`)
-      console.log(`Diária: R$ ${this._valorDiaria.toFixed(2)}`)
-      console.log(`Dias: ${this.qtDias}`)
-      console.log(`Total: R$ ${total.toFixed(2)}`)
+      
+      const resumo = `Resumo da Locação\n` +
+                     `Carro: ${this.modelo}\n` +
+                     `Diária: R$ ${this._valorDiaria.toFixed(2)}\n` +
+                     `Dias: ${this.qtDias}\n` +
+                     `Total: R$ ${total.toFixed(2)}`
+      
+      alert(resumo)
     }
   }
 
@@ -40,19 +39,18 @@ export function poo_12() {
 
     if (opcao === 1) {
       const modelo = prompt("Digite o modelo do carro:") || "Não informado"
-      const valorDiaria = parseFloat(prompt("Digite o valor da diária:") || "0")
       const qtDias = parseInt(prompt("Digite a quantidade de dias:") || "0")
 
-      locacao = new Aluguel(modelo, valorDiaria, qtDias)
-      locacao.totalAluguel()
-    } 
-    else if (opcao === 2) {
+      locacao = new Aluguel(modelo, qtDias)
+      locacao.exibirResumo()
+    } else if (opcao === 2) {
       if (locacao) {
-        locacao.totalAluguel()
+        locacao.exibirResumo()
       } else {
-        console.log("Nenhuma locação ativa encontrada.")
+        alert("Nenhuma locação ativa encontrada.")
       }
     }
   }
 }
+
 
