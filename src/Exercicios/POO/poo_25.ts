@@ -10,4 +10,52 @@
 
 
 
-export function poo_25 (){}
+export function poo_25 (){
+
+class Assinatura {
+    email: string
+    valor: number
+
+    constructor(email: string, valor: number) {
+        this.email = email
+        this.valor = valor
+    }
+
+    detalhes(): string {
+        return "Email: " + this.email + "\nValor: R$ " + this.valor.toFixed(2)
+    }
+}
+
+class AssinaturaPadrao extends Assinatura {
+    constructor(email: string) {
+        super(email, 29.90)
+    }
+
+    detalhes(): string {
+        return super.detalhes() + "\nTelas: 2"
+    }
+}
+
+class AssinaturaPremium extends Assinatura {
+    constructor(email: string) {
+        super(email, 49.90)
+    }
+
+    detalhes(): string {
+        return super.detalhes() + "\nTelas: 4\nResolução: 4K"
+    }
+}
+
+let email = prompt("Email:")
+if(email === null) return
+let tipo = prompt("1 - Padrão (R$29,90)\n2 - Premium (R$49,90)")
+
+let assinatura: Assinatura
+if (tipo === "1") {
+    assinatura = new AssinaturaPadrao(email)
+} else {
+    assinatura = new AssinaturaPremium(email)
+}
+
+alert("Detalhes da assinatura:\n" + assinatura.detalhes())
+}
