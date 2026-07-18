@@ -9,4 +9,51 @@
 
 
 
-export function poo_28 (){}
+export function poo_28 (){
+
+class Acomodacao {
+    numero: number
+    precoBase: number
+
+    constructor(numero: number, precoBase: number) {
+        this.numero = numero
+        this.precoBase = precoBase
+    }
+
+    calcularTotal(dias: number): number {
+        return this.precoBase * dias
+    }
+}
+
+class SuiteMaster extends Acomodacao {
+    adicionalHidro: number
+
+    constructor(numero: number, precoBase: number, adicionalHidro: number) {
+        super(numero, precoBase)
+        this.adicionalHidro = adicionalHidro
+    }
+
+    calcularTotal(dias: number): number {
+        return (this.precoBase + this.adicionalHidro) * dias
+    }
+}
+
+let num = Number(prompt("Número do quarto:"))
+let preco = Number(prompt("Preço base da diária:"))
+let tipo = prompt("1 - Comum\n2 - Suite Master")
+
+let acomodacao: Acomodacao
+if (tipo === "2") {
+    let extra = Number(prompt("Adicional hidromassagem por diária:"))
+    acomodacao = new SuiteMaster(num, preco, extra)
+} else {
+    acomodacao = new Acomodacao(num, preco)
+}
+
+let dias = Number(prompt("Quantos dias?"))
+let total = acomodacao.calcularTotal(dias)
+
+alert("Quarto: " + acomodacao.numero +
+      "\nDiárias: " + dias +
+      "\nValor total: R$ " + total.toFixed(2))
+}
