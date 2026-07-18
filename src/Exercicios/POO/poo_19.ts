@@ -8,4 +8,65 @@
 // perigo.
 
 
-export function poo_19 (){}
+export function poo_19 (){
+class Sensor {
+    codigo: string
+    leitura: number
+
+    constructor(codigo: string, leitura: number) {
+        this.codigo = codigo
+        this.leitura = leitura
+    }
+
+    exibir(): string {
+        return "Código: " + this.codigo + " - Leitura: " + this.leitura
+    }
+
+    alerta(): boolean {
+        return false
+    }
+}
+
+class SensorTemperatura extends Sensor {
+    constructor(codigo: string, leitura: number) {
+        super(codigo, leitura)
+    }
+
+    exibir(): string {
+        return "Código: " + this.codigo + " - Temperatura: " + this.leitura + " °C"
+    }
+
+    alerta(): boolean {
+        return this.leitura > 40
+    }
+}
+
+class SensorPressao extends Sensor {
+    constructor(codigo: string, leitura: number) {
+        super(codigo, leitura)
+    }
+
+    exibir(): string {
+        return "Código: " + this.codigo + " - Pressão: " + this.leitura + " atm"
+    }
+
+    alerta(): boolean {
+        return this.leitura > 5
+    }
+}
+
+let cod = prompt("Código do sensor:")
+if(cod === null) return
+let tipoSensor = prompt("1 - Temperatura\n2 - Pressão")
+let leitura = Number(prompt("Leitura:"))
+
+let sensor: Sensor
+if (tipoSensor === "1") {
+    sensor = new SensorTemperatura(cod, leitura)
+} else {
+    sensor = new SensorPressao(cod, leitura)
+}
+
+alert("Dados do sensor:\n" + sensor.exibir() + "\nAlerta: " + (sensor.alerta() ? "SIM" : "NÃO"))
+
+}
