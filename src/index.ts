@@ -68,7 +68,7 @@ import { poo_30 } from "./Exercicios/POO/poo_30.js"
 
 //linha copia e cola codigo daa questões
 const codigosQuestoes: Record<string, string> = {
-//Q1 (CONDICIONAL)
+    //Q1 (CONDICIONAL)
     'btn-q1': `1 - Crie um programa que leia um número e informe se ele é:
 • Par ou Ímpar
 • Positivo ou Negativo
@@ -83,9 +83,10 @@ function impar_Par(valor:number): any {
     }
     
     let numero: number = Number(prompt("Informe um número: "))
-    impar_Par(numero)`, 
-//Q2   
-    'btn-q2': `2 - Crie um programa chamado Estações. Este programa deve ler uma data e armazenar na
+    impar_Par(numero)`,
+
+    //Q2
+    'btn-q2': String.raw`2 - Crie um programa chamado Estações. Este programa deve ler uma data e armazenar na
 variável mês, um número entre 1 e 12, correspondendo a um dos meses do ano. No final,
 você deve imprimir uma mensagem conforme o exemplo: "A estação do ano correspondente
 ao mês 3 é Verão"; Considere a estação prevalente para cada mês:
@@ -135,10 +136,10 @@ l) Dezembro (12): Primavera
             return
     }
 
-    alert('A estação do ano correspondente ao mês $ {mes} é $ {estacao}')`,
+    alert(\`A estação do ano correspondente ao mês \${mes} é \${estacao}\`)`,
 
-//Q3
-    'btn-q3': `3 - Crie um programa que solicite dois números e simule um menu de uma calculadora:
+    //Q3
+    'btn-q3': String.raw`3 - Crie um programa que solicite dois números e simule um menu de uma calculadora:
 1 - Soma
 2 - Subtração
 3 - Multiplicação
@@ -173,9 +174,9 @@ let P_entrada: number = Number(prompt("Digite o primeiro número: "))
             return
     }
 
-    alert('Resultado da $ {operacaoNome}: $ {P_entrada} e $ {S_entrada} = $ {resultado}')`,
+    alert(\`Resultado da \${operacaoNome}: \${P_entrada} e \${S_entrada} = \${resultado}\`)`,
 
-//Q4
+    //Q4
     'btn-q4': `4 - Ler dois valores e imprimir uma das três mensagens a seguir:
 ● ‘Números iguais’, caso os números sejam iguais;
 ● ‘Primeiro é maior’, caso o primeiro seja maior que o segundo;
@@ -196,8 +197,8 @@ let P_entrada: number = Number(prompt("Digite o primeiro número: "))
         alert("Números digitados: "+num1+", "+num2+"\n Segundo maior")
     }`,
 
-//Q1 (FUNÇÃO)
-    'btn-q5': `1 - Crie uma função somarAte que recebe um número inteiro positivo. Use um laço de repetição
+    //Q1 (FUNÇÃO)
+    'btn-q5': String.raw`1 - Crie uma função somarAte que recebe um número inteiro positivo. Use um laço de repetição
 para calcular a soma de todos os números de 1 até o número fornecido. (Ex: somarAte(4)
 deve retornar 10, pois 1+2+3+4 = 10).
 
@@ -215,9 +216,9 @@ deve retornar 10, pois 1+2+3+4 = 10).
     }
     
     let resultado: number = somarAte(num_info)
-    alert('A soma dos elementos contidos no número $ {num_info} é $ {resultado}')`,
+    alert(\`A soma dos elementos contidos no número \${num_info} é \${resultado}\`)`,
 
-//Q2
+    //Q2
     'btn-q6': `2 - O IF tem uma estufa e o professor de biologia quer um sistema simples para monitorar a
 temperatura.
 ● Crie uma função ler_temperatura():
@@ -265,7 +266,7 @@ o Se status_alerta for False, imprime "Temperatura dentro da faixa normal.".
     let alerta: number = verificar_alerta_temperatura(temp)
     emitir_mensagem_alerta(alerta)`,
 
-//Q3
+    //Q3
     'btn-q7': `3 - Crie uma função que recebe um número (ex: 5) e em seguida utilize loops aninhados para
 desenhar um triângulo de asteriscos no console.
 Exemplo para entrada 3:
@@ -289,7 +290,7 @@ Exemplo para entrada 3:
     
     triangulo(num)`,
 
-//Q4
+    //Q4
     'btn-q8': `4 - Crie uma função que recebe um valor de saque (inteiro). A função deve dizer quantas notas
 de 50, 20 e 10 são necessárias para o saque (priorizando as maiores). Use um laço while
 para ir subtraindo do valor total.
@@ -329,7 +330,7 @@ para ir subtraindo do valor total.
     
     calcularNotas(valor)`,
 
-//Q5
+    //Q5
     'btn-q9': `5 - Crie uma função que recebe dois números: início e fim. Depois use um laço para percorrer
 esse intervalo e imprimir apenas os números que são múltiplos de 3.
 
@@ -350,7 +351,7 @@ esse intervalo e imprimir apenas os números que são múltiplos de 3.
     
     multiplosDeTres(inicio, fim)`,
 
-//Q6
+    //Q6
     'btn-q10': `6 - Faça um programa para o cálculo de uma folha de pagamento fictício, sabendo que os
 descontos são do Imposto de Renda, que depende do salário bruto (conforme tabela abaixo),
 3% para o Sindicato, 6% de vale transporte, 8% de vale alimentação, 10% do INSS e o FGTS
@@ -425,7 +426,7 @@ Imprima na tela as informações, dispostas conforme o exemplo abaixo. No exempl
     
     calcularFolha(valorHora, horasTrabalhadas)`,
 
-//Q7
+    //Q7
     'btn-q11': `7 - Sistema de Eficiência de Combustível
 Crie um programa que ajude um motorista a saber a autonomia do seu carro.
 ● Função 1: Recebe a distância percorrida e a quantidade de combustível gasta, retornando
@@ -465,7 +466,7 @@ quilômetros o carro percorre com o tanque cheio.
         "Autonomia com tanque cheio: " + autonomiaTotal.toFixed(2) + " km"
     )`,
 
-//Q8
+    //Q8
     'btn-q12': `8 - Controle de Estoque de Loja (Loop e Relatório)
 Faça um programa que gerencie a entrada de produtos em um estoque. O programa deve solicitar o
 preço unitário do produto e a quantidade comprada.
@@ -524,7 +525,7 @@ cadastrados.
         alert("Nenhum produto foi cadastrado.")
     }`,
 
-//Q9
+    //Q9
     'btn-q13': `9 - Simulador de Aprovação de Crédito
 Uma loja quer automatizar a análise de crédito de clientes.
 
@@ -579,8 +580,8 @@ Peça a renda e o valor da parcela que o cliente deseja pagar, processe e mostre
     let resultado: number = analisar_credito(renda, parcela)
     exibir_status(resultado)`,
 
-//Q10
-    'btn-q14': `10 - Calculadora de IMC com Classificação.
+    //Q10
+    'btn-q14': String.raw`10 - Calculadora de IMC com Classificação.
 Um personal trainer precisa de uma ferramenta para avaliar seus alunos.
 ● Função calcular_imc(peso, altura): Retorna o resultado da fórmula IMC = peso/altura².
 ● Função classificar_imc(valor_imc): Recebe o IMC e retorna uma string:
@@ -615,7 +616,7 @@ o 25 ou mais: "Sobrepeso"
 
 
     function exibir_laudo(nome_cliente: string, classificacao: string): void {
-        alert('Paciente: $ {nome_cliente} \n Status: $ {classificacao}')
+        alert(\`Paciente: \${nome_cliente} \n Status: \${classificacao}\`)
     }
 
 
@@ -623,7 +624,7 @@ o 25 ou mais: "Sobrepeso"
     let classificacao: string = classificar_imc(imc)
     exibir_laudo(nome_cliente, classificacao)`,
 
-//Q1 (REPETIÇÃO)
+    //Q1 (REPETIÇÃO)
     'btn-q15': `1 - Crie um programa que peça números até o usuário digitar 0 e mostre:
 ● Quantidade de números digitados
 ● Soma total
@@ -642,20 +643,20 @@ o 25 ou mais: "Sobrepeso"
 
     alert("Quantidade de números digitados: " + quantidade + "\nSoma total: " + soma)`,
 
-//Q2
-    'btn-q16': `2 - Desenvolva a tabuada de um número usando for.
+    //Q2
+    'btn-q16': String.raw`2 - Desenvolva a tabuada de um número usando for.
     
         alert("Tabuada do número")
     let num: number = Number(prompt("Digite um número para ver sua tabuada: "))
     let tabuada: string = ""
 
     for (let i: number = 1; i <= 10; i++) {
-        tabuada += '$ {num} x $ {i} = $ {num * i}\n'
+        tabuada += \`\${num} x \${i} = \${num * i}\n\`
     }
 
     alert(tabuada)`,
 
-//Q3
+    //Q3
     'btn-q17': `3 - Faça um programa que leia nome, horas trabalhadas, salário-hora e sexo de um grupo de
 operários. Ao final de cada solicitação pergunte se o usuário quer continuar ou não o
 programa.
@@ -717,7 +718,7 @@ recebeu;
         "\nPercentual de mulheres: " + percFeminino.toFixed(1) + "%"
     )`,
 
-//Q4
+    //Q4
     'btn-q18': `4 - Faça um programa que leia um conjunto de números (X) e imprima a quantidade de
 números pares (QPares) e a quantidade de números ímpares (QImpares) lidos. Admita que o
 valor -1 é utilizado como sentinela para fim de leitura.
@@ -739,7 +740,7 @@ valor -1 é utilizado como sentinela para fim de leitura.
 
     alert("Quantidade de pares: " + QPares + "\nQuantidade de ímpares: " + QImpares)`,
 
-//Q5
+    //Q5
     'btn-q19': `5 - Analisador de Desempenho de Vendas (Relatório de Equipe)
 Imagine que você está gerindo uma equipe de 5 vendedores.
 ● Função classificarVenda(valor):
@@ -794,7 +795,7 @@ o Se valor > 5000: Retorna "Ouro"
         "\nMaior venda: R$ " + maiorVenda.toFixed(2) + " (Vendedor " + vendedorMaior + ")" +
         "\nVendedores Ouro: " + qtdOuro)`,
 
-//Q1 (ARRAY)
+    //Q1 (ARRAY)
     'btn-q20': `1 - Mostre-me as seguintes listas, derivadas de: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 a) Números pares
 b) Números ímpares
@@ -843,7 +844,7 @@ d) Lista reversa
         "d) Lista reversa: " + reversa.join(", ")
     )`,
 
-//Q2
+    //Q2
     'btn-q21': `2 - Faça um programa que leia um número indeterminado de notas ou -1 para encerrar. Após esta
 entrada de dados, faça o seguinte:
 a) Mostre a quantidade de notas que foram lidas.
@@ -906,7 +907,7 @@ f) Calcule e mostre a quantidade de notas acima da média calculada.
         "Média: " + media.toFixed(2) + "\n" +
         "Notas acima da média: " + acimaMedia)`,
 
-//Q3
+    //Q3
     'btn-q22': `3 - Gerador de Lista de Compras Personalizada
 Sua mãe pediu para você fazer uma lista de compras para o supermercado. Ela quer que você possa
 adicionar itens e a quantidade de cada um.
@@ -983,7 +984,7 @@ Crie uma função chamada gerar_lista_compras() que não recebe argumentos. A fu
 
     gerar_lista_compras()`,
 
-//Q4
+    //Q4
     'btn-q23': `4 - Calculadora de Média do ENEM
 Um professor de cursinho pré-ENEM precisa de uma ferramenta para calcular a média de seus
 alunos em diferentes disciplinas. Ele quer que a média seja arredondada para duas casas decimais.
@@ -1025,7 +1026,7 @@ A função deve:
     let media: number = calcular_media(notas)
     alert("Média: " + media.toFixed(2))`,
 
-//Q5
+    //Q5
     'btn-q24': `5 - Organizador de Tarefas Diárias
 Você quer organizar suas tarefas de casa e da escola para não esquecer nada. Crie uma função
 chamada gerenciar_tarefas() que não receba argumentos. A função deve:
@@ -1095,7 +1096,7 @@ manter o programa rodando até o usuário escolher sair.
 
     gerenciar_tarefas()`,
 
-//Q6
+    //Q6
     'btn-q25': `6 - Crie um Array vazio que irá armazenar 15 nomes de pessoas (usando laço de repetição);
 a) Pedir os nomes das pessoas usando o Prompt e o método push();
 b) Apresentar os nomes digitados;
@@ -1126,7 +1127,7 @@ d) Apresentar os nomes inseridos de forma ordenada.
     let ordenado: string = "Ordem alfabética:\n" + nomes.join("\n")
     alert(ordenado)`,
 
-//Q7
+    //Q7
     'btn-q26': `7 - Lista de Presença
 
 1. Crie um array chamado presenca que aceite apenas strings.
@@ -1156,7 +1157,7 @@ d) Apresentar os nomes inseridos de forma ordenada.
     }
     alert(listaMaiuscula)`,
 
-//Q8
+    //Q8
     'btn-q27': `8 - Boletim Híbrido
 1. Crie um array chamado notasSemestre que possa receber number ou a string "N.A" (Não
 Avaliado).
@@ -1187,7 +1188,7 @@ Avaliado).
 
     alert(resultado)`,
 
-//Q9
+    //Q9
     'btn-q28': `9 - Implemente uma função chamada gerarIntervaloFiltrado que receba dois parâmetros numéricos:
 inicio e fim. A função deve seguir os seguintes requisitos:
 ● Antes de iniciar o laço, verifique se o valor de inicio é menor ou igual ao valor de fim. Caso não
@@ -1220,13 +1221,13 @@ a lista criada.
 
     alert(multiplos)`,
 
-//Q10
+    //Q10
     'btn-q29': ``,
 
-//POO
+    //POO
 
     //Q1
-    'btn-q30': `// Classe Bola: Crie uma classe que modele uma bola:
+    'btn-q30': String.raw`// Classe Bola: Crie uma classe que modele uma bola:
 //  Atributos: Cor, circunferência, material
 //  Métodos: trocaCor e mostraCor
 
@@ -1255,11 +1256,11 @@ class Bola {
 
     let bola_1:Bola = new Bola("vermelha",65,"couro")
 
-     alert('A bola tem as características:\nCor: $ {bola_1.mostraCor()}\nCircunferência: $ {bola_1.circunferencia}cm\nMaterial: $ {bola_1.material}')`,
+     alert(\`A bola tem as características:\nCor: \${bola_1.mostraCor()}\nCircunferência: \${bola_1.circunferencia}cm\nMaterial: \${bola_1.material}\`)`,
 
 
-//Q2
-    'btn-q31': `// Classe Quadrado: Crie uma classe que modele um quadrado:
+    //Q2
+    'btn-q31': String.raw`// Classe Quadrado: Crie uma classe que modele um quadrado:
 //  Atributos: Tamanho do lado
 //  Métodos: Mudar valor do Lado,
 //  Retornar valor do Lado e calcular Área;
@@ -1291,14 +1292,12 @@ class Quadrado{
 let quadrado:Quadrado = new Quadrado (10)
 
  alert(
-        'Características do Quadrado:\n' +
-        '- Tamanho do lado: $ {quadrado.retornar_valor_do_lado()}\n' +
-        '- Área total: $ {quadrado.calcular_area()}'
+        \`Características do Quadrado:\n- Tamanho do lado: \${quadrado.retornar_valor_do_lado()}\n- Área total: \${quadrado.calcular_area()}\`
     )
-} `,
+}`,
 
-//Q3
-    'btn-q32': `// Classe Retângulo: Crie uma classe que modele um retângulo:
+    //Q3
+    'btn-q32': String.raw`// Classe Retângulo: Crie uma classe que modele um retângulo:
 // A. Atributos: LadoA, LadoB (ou Comprimento e Largura, ou Base e Altura, a escolher)
 // B. Métodos: Mudar valor dos lados,
 //  Retornar valor dos lados,
@@ -1337,67 +1336,1471 @@ let quadrado:Quadrado = new Quadrado (10)
 
 
     alert(
-        'Características do Retângulo:\n' +
-        '- Base: $ {lados.base}\n' +
-        '- Altura: $ {lados.altura}\n' +
-        '- Área: $ {retangulo.calcular_area()}\n' +
-        '- Perímetro: $ {retangulo.calcular_perimetro()}'
+        \`Características do Retângulo:\n- Base: \${lados.base}\n- Altura: \${lados.altura}\n- Área: \${retangulo.calcular_area()}\n- Perímetro: \${retangulo.calcular_perimetro()}\`
     )`,
 
-//Q4
-    'btn-q33': ``,
+    //Q4
+    'btn-q33': String.raw` // 4 - Crie um programa que utilize a classe Retângulo (da questão anterior).
+// Ele deve pedir ao usuário que informe as medidas de um local (comprimento e largura).
+// Depois, deve criar um objeto com as medidas e calcular a quantidade de pisos (área)
+// e de rodapés (perímetro) necessárias para o local.
+
+class PisoRodape {
+    comprimento: number
+    largura: number
+
+    constructor(comprimento: number, largura: number) {
+        this.comprimento = comprimento
+        this.largura = largura
+    }
+
+    calcularPisos(): number {
+        return this.comprimento * this.largura
+    }
+
+    calcularRodapes(): number {
+        return 2 * (this.comprimento + this.largura)
+    }
+}
+
+let comprimento = Number(prompt("Digite o comprimento do local (em metros):"))
+let largura = Number(prompt("Digite a largura do local (em metros):"))
+
+let local = new PisoRodape(comprimento, largura)
+
+let pisos = local.calcularPisos()
+let rodapes = local.calcularRodapes()
+
+alert(
+    "Medidas do local:\n" +
+    "Comprimento: " + comprimento + " m\n" +
+    "Largura: " + largura + " m\n\n" +
+    "Quantidade de pisos necessários (1 m² cada): " + pisos + "\n" +
+    "Quantidade de rodapés necessários (1 m linear cada): " + rodapes
+)`,
     //Q5
-    'btn-q34': ``,
+    'btn-q34': String.raw`// 5 - Classe Pessoa: Crie uma classe que modele uma pessoa:
+// Atributos: nome, idade, peso e altura
+// Métodos: Envelhecer, engordar, emagrecer, crescer.
+// Obs: Por padrão, a cada ano que nossa pessoa envelhece, sendo a idade dela menor que 21 anos, ela deve crescer 0,5 cm.
+
+class Pessoa {
+    nome: string
+    idade: number
+    peso: number
+    altura: number
+
+    constructor(nome: string, idade: number, peso: number, altura: number) {
+        this.nome = nome
+        this.idade = idade
+        this.peso = peso
+        this.altura = altura
+    }
+
+    envelhecer(): void {
+        if (this.idade < 21) {
+            this.altura += 0.5
+        }
+        this.idade++
+    }
+
+    engordar(kg: number): void {
+        this.peso += kg
+    }
+
+    emagrecer(kg: number): void {
+        this.peso -= kg
+    }
+
+    crescer(cm: number): void {
+        this.altura += cm
+    }
+}
+
+let nome = prompt("Nome:")
+if (nome === null) return
+let idade = Number(prompt("Idade:"))
+let peso = Number(prompt("Peso (kg):"))
+let altura = Number(prompt("Altura (cm):"))
+
+let pessoa = new Pessoa(nome, idade, peso, altura)
+
+alert("Dados iniciais:\nNome: " + pessoa.nome + "\nIdade: " + pessoa.idade + "\nPeso: " + pessoa.peso + " kg\nAltura: " + pessoa.altura + " cm")
+pessoa.envelhecer()
+alert("Após envelhecer 1 ano:\nIdade: " + pessoa.idade + "\nAltura: " + pessoa.altura + " cm")
+
+pessoa.engordar(5)
+alert("Após engordar 5 kg:\nPeso: " + pessoa.peso + " kg")`,
     //Q6
-    'btn-q35': ``,
+    'btn-q35': String.raw` // 6 - Classe Conta Corrente: Crie uma classe para implementar uma conta corrente.
+// Atributos: número da conta, nome do correntista e saldo.
+// Métodos: alterarNome, depósito e saque.
+// No construtor, saldo é opcional, com valor default zero e os demais atributos são obrigatórios.
+
+class ContaCorrente {
+    private _numero: string
+    private _nome: string
+    private _saldo: number
+
+    constructor(numero: string, nome: string, saldo: number = 0) {
+        this._numero = numero
+        this._nome = nome
+        this._saldo = saldo
+    }
+
+    get saldo(): number { return this._saldo }
+    get nome(): string { return this._nome }
+    get numero(): string { return this._numero}
+
+    set nome(n: string) {
+        if (n.length > 0) this._nome = n
+    }
+
+    depositar(valor: number): void {
+        if (valor > 0) this._saldo += valor
+    }
+
+    sacar(valor: number): void {
+        if (valor > 0 && valor <= this._saldo) {
+            this._saldo -= valor
+        } else {
+            alert("Saldo insuficiente ou valor inválido.")
+        }
+    }
+}
+
+let numConta = prompt("Número da conta:")
+if(numConta === null) return
+let nomeTitular = prompt("Nome do titular:")
+if(nomeTitular === null) return
+let conta = new ContaCorrente(numConta, nomeTitular)
+
+alert("Conta criada com sucesso!\nNúmero: " + conta.numero + "\nTitular: " + conta.nome)
+
+let opcao = prompt("Escolha:\n1 - Depositar\n2 - Sacar\n3 - Ver Saldo\n4 - Sair")
+if (opcao === "1") {
+    let valor = Number(prompt("Valor para depósito:"))
+    conta.depositar(valor)
+    alert("Novo saldo: R$ " + conta.saldo.toFixed(2))
+} else if (opcao === "2") {
+    let valor = Number(prompt("Valor para saque:"))
+    conta.sacar(valor);
+    alert("Novo saldo: R$ " + conta.saldo.toFixed(2))
+} else if (opcao === "3") {
+    alert("Saldo atual: R$ " + conta.saldo.toFixed(2))
+} else {
+    alert("Saindo...")
+}`,
     //Q7
-    'btn-q36': ``,
+    'btn-q36': String.raw`// 7 - Uma empresa quer cadastrar funcionários e aplicar aumento salarial.
+// O sistema deve pedir nome, cargo e salário.
+// Crie um método que receba um percentual de aumento e atualize o salário do funcionário,
+// exibindo o seu nome e novo valor.
+
+class Funcionario {
+    nome: string
+    cargo: string
+    salario: number
+
+    constructor(nome: string, cargo: string, salario: number) {
+        this.nome = nome
+        this.cargo = cargo
+        this.salario = salario
+    }
+
+    aplicarAumento(percentual: number): void {
+        this.salario += this.salario * (percentual / 100)
+    }
+
+    exibir(): string {
+        return "Nome: " + this.nome + "\nCargo: " + this.cargo + "\nSalário: R$ " + this.salario.toFixed(2)
+    }
+}
+
+let nome = prompt("Nome do funcionário:")
+if(nome === null) return
+let cargo = prompt("Cargo:")
+if(cargo === null) return
+let salario = Number(prompt("Salário atual (R$):"))
+
+let func = new Funcionario(nome, cargo, salario)
+
+let percentual = Number(prompt("Percentual de aumento (%):"))
+func.aplicarAumento(percentual)
+
+alert("Dados atualizados:\n" + func.exibir())`,
     //Q8
-    'btn-q37': ``,
+    'btn-q37': String.raw`// 8 - Uma empresa precisa de um sistema simples para cadastrar seus funcionários.
+// O sistema deve solicitar ao usuário o nome, o cargo e o salário de vários funcionários.
+// Para cada funcionário cadastrado, deve ser criado um objeto que armazene essas informações.
+// Ao final, o sistema deve exibir um resumo de todos os funcionários cadastrados,
+// utilizando um método da classe.
+
+class Funcionario {
+    nome: string
+    cargo: string
+    salario: number
+
+    constructor(nome: string, cargo: string, salario: number) {
+        this.nome = nome
+        this.cargo = cargo
+        this.salario = salario
+    }
+
+    resumo(): string {
+        return "Nome: " + this.nome + "\nCargo: " + this.cargo + "\nSalário: R$ " + this.salario.toFixed(2)
+    }
+}
+
+let nome = prompt("Nome do funcionário:")
+if(nome === null) return
+let cargo = prompt("Cargo:")
+if(cargo === null) return
+let salario = Number(prompt("Salário (R$):"))
+
+let func = new Funcionario(nome, cargo, salario)
+alert("Resumo do cadastro:\n" + func.resumo())`,
     //Q9
-    'btn-q38': ``,
+    'btn-q38': String.raw`// Uma loja deseja controlar seu estoque de produtos. O sistema deve pedir ao usuário o nome do
+// produto, o preço e a quantidade em estoque. Cada produto deve ser representado por um objeto. Crie
+// um método que calcule o valor total em estoque (preço × quantidade) e exiba essa informação para
+// cada produto.
+
+class Produto {
+    nome: string
+    preco: number
+    quantidade: number
+
+    constructor(nome: string, preco: number, quantidade: number) {
+        this.nome = nome
+        this.preco = preco
+        this.quantidade = quantidade
+    }
+
+    valorTotal(): number {
+        return this.preco * this.quantidade
+    }
+
+    exibir(): string {
+        return "Produto: " + this.nome +
+               "\nPreço: R$ " + this.preco.toFixed(2) +
+               "\nQuantidade: " + this.quantidade +
+               "\nValor total em estoque: R$ " + this.valorTotal().toFixed(2)
+    }
+}
+
+let nome = prompt("Nome do produto:")
+if(nome === null)return
+let preco = Number(prompt("Preço unitário (R$):"))
+let quantidade = Number(prompt("Quantidade em estoque:"))
+
+let produto = new Produto(nome, preco, quantidade)
+alert("Dados do produto:\n" + produto.exibir())  `,
     //Q10
-    'btn-q39': ``,
+    'btn-q39': String.raw`// // Classe Bichinho Virtual: Crie uma classe que modele um Tamagushi (Bichinho Eletrônico):
+// // A. Atributos: Nome, Fome, Saúde e Idade
+// // B. Métodos: Alterar Nome, Fome, Saúde e Idade;
+// // C. Retornar Nome, Fome, Saúde e Idade
+
+// Obs: Existe mais uma informação que devemos levar em consideração, o Humor do nosso tamagushi,
+// este humor é uma combinação entre os atributos Fome e Saúde, ou seja, um campo calculado, então não
+// devemos criar um atributo para armazenar esta informação por que ela pode ser calculada a qualquer
+// momento.
+
+class Tamagushi {
+    nome: string
+    fome: number
+    saude: number
+    idade: number
+
+    constructor(nome: string, fome: number, saude: number, idade: number) {
+        this.nome = nome
+        this.fome = fome
+        this.saude = saude
+        this.idade = idade
+    }
+
+    // Métodos para alterar
+    alterarNome(novoNome: string): void { this.nome = novoNome; }
+    alterarFome(novaFome: number): void { this.fome = novaFome; }
+    alterarSaude(novaSaude: number): void { this.saude = novaSaude }
+    alterarIdade(novaIdade: number): void { this.idade = novaIdade }
+
+    // Métodos para retornar
+    retornarNome(): string { return this.nome }
+    retornarFome(): number { return this.fome }
+    retornarSaude(): number { return this.saude }
+    retornarIdade(): number { return this.idade }
+
+    // Campo calculado (Humor)
+    humor(): string {
+        let media = (this.fome + this.saude) / 2
+        if (media >= 8) return "Feliz ;)"
+        else if (media >= 5) return "Neutro :|"
+        else return "Triste :("
+    }
+}
+
+let nome = prompt("Nome do bichinho:")
+if(nome === null) return
+let fome = Number(prompt("Fome (0 a 10):"))
+let saude = Number(prompt("Saúde (0 a 10):"))
+let idade = Number(prompt("Idade:"))
+
+let bichinho = new Tamagushi(nome, fome, saude, idade)
+
+alert(
+    "Dados do Tamagushi:\n" +
+    "Nome: " + bichinho.retornarNome() + "\n" +
+    "Fome: " + bichinho.retornarFome() + "\n" +
+    "Saúde: " + bichinho.retornarSaude() + "\n" +
+    "Idade: " + bichinho.retornarIdade() + "\n" +
+    "Humor: " + bichinho.humor()
+)`,
     //Q11
-    'btn-q40': ``,
+    'btn-q40': String.raw`// 11 - Uma lanchonete quer registrar pedidos dos clientes.
+// O sistema deve solicitar o nome do cliente, o nome do pedido e o valor.
+// Crie um método que exiba o resumo do pedido e o valor total.
+
+class Pedido {
+    cliente: string
+    nomePedido: string
+    valor: number
+
+    constructor(cliente: string, nomePedido: string, valor: number) {
+        this.cliente = cliente
+        this.nomePedido = nomePedido
+        this.valor = valor
+    }
+
+    resumo(): string {
+        return "Cliente: " + this.cliente +
+               "\nPedido: " + this.nomePedido +
+               "\nValor: R$ " + this.valor.toFixed(2)
+    }
+}
+
+let cliente = prompt("Nome do cliente:")
+if(cliente === null) return
+let pedido = prompt("Nome do pedido:")
+if(pedido === null) return
+let valor = Number(prompt("Valor do pedido (R$):"))
+
+let objPedido = new Pedido(cliente, pedido, valor)
+alert("Resumo do pedido:\n" + objPedido.resumo())`,
     //Q12
-    'btn-q41': ``,
+    'btn-q41': String.raw`// Uma locadora quer controlar os carros disponíveis. O sistema deve solicitar o modelo do carro, o
+// valor da diária e a quantidade de dias que o cliente deseja alugar. Crie um método que calcule o valor
+// total do aluguel e exiba o resumo da locação.
+
+class Locacao {
+    modelo: string
+    valorDiaria: number
+    dias: number
+
+    constructor(modelo: string, valorDiaria: number, dias: number) {
+        this.modelo = modelo
+        this.valorDiaria = valorDiaria
+        this.dias = dias
+    }
+
+    calcularTotal(): number {
+        return this.valorDiaria * this.dias
+    }
+
+    resumo(): string {
+        return "Modelo: " + this.modelo +
+               "\nDiárias: " + this.dias +
+               "\nValor total: R$ " + this.calcularTotal().toFixed(2)
+    }
+}
+
+let modelo = prompt("Modelo do carro:")
+if(modelo === null) return
+let diaria = Number(prompt("Valor da diária (R$):"))
+let dias = Number(prompt("Quantos dias?"))
+
+let locacao = new Locacao(modelo, diaria, dias)
+alert("Resumo da locação:\n" + locacao.resumo())`,
     //Q13
-    'btn-q42': ``,
+    'btn-q42': String.raw`// Uma escola quer cadastrar alunos e suas notas. O sistema deve solicitar o nome do aluno e duas notas.
+// Cada aluno será um objeto. Crie um método que calcule a média e informe se o aluno foi aprovado ou
+// reprovado.
+
+class Aluno {
+    nome: string
+    nota1: number
+    nota2: number
+
+    constructor(nome: string, nota1: number, nota2: number) {
+        this.nome = nome
+        this.nota1 = nota1
+        this.nota2 = nota2
+    }
+
+    calcularMedia(): number {
+        return (this.nota1 + this.nota2) / 2
+    }
+
+    situacao(): string {
+        return this.calcularMedia() >= 7 ? "Aprovado" : "Reprovado"
+    }
+}
+
+let nome = prompt("Nome do aluno:")
+if(nome === null) return
+let n1 = Number(prompt("Nota 1:"))
+let n2 = Number(prompt("Nota 2:"))
+
+let aluno = new Aluno(nome, n1, n2)
+alert("Aluno: " + aluno.nome +
+      "\nMédia: " + aluno.calcularMedia().toFixed(1) +
+      "\nSituação: " + aluno.situacao())`,
     //Q14
-    'btn-q43': ``,
+    'btn-q43': String.raw`// Arrays Repetição Encapsulamento
+// Uma biblioteca precisa catalogar seus livros. Crie uma classe Livro com título, autor, ano de
+// publicação e disponibilidade (boolean). O programa deve permitir cadastrar até 15 livros via teclado,
+// listar todos os disponíveis e registrar o empréstimo de um livro pesquisado pelo título.
+
+
+class Livro {
+    titulo: string
+    autor: string
+    ano: number
+    disponivel: boolean
+
+    constructor(titulo: string, autor: string, ano: number, disponivel: boolean = true) {
+        this.titulo = titulo
+        this.autor = autor
+        this.ano = ano
+        this.disponivel = disponivel
+    }
+
+    emprestar(): void {
+        if (this.disponivel) {
+            this.disponivel = false
+            alert("Livro emprestado com sucesso!")
+        } else {
+            alert("Livro indisponível!")
+        }
+    }
+
+    devolver(): void {
+        this.disponivel = true
+        alert("Livro devolvido!")
+    }
+
+    exibir(): string {
+        return "Título: " + this.titulo +
+               "\nAutor: " + this.autor +
+               "\nAno: " + this.ano +
+               "\nDisponível: " + (this.disponivel ? "Sim" : "Não")
+    }
+}
+
+let titulo = prompt("Título do livro:")
+if(titulo === null) return
+let autor = prompt("Autor:")
+if(autor === null) return
+let ano = Number(prompt("Ano de publicação:"))
+
+let livro = new Livro(titulo, autor, ano)
+alert("Livro cadastrado:\n" + livro.exibir())
+
+let opcao = prompt("1 - Emprestar\n2 - Devolver\n3 - Ver status")
+if (opcao === "1") {
+    livro.emprestar()
+    alert("Status atual:\n" + livro.exibir())
+} else if (opcao === "2") {
+    livro.devolver()
+    alert("Status atual:\n" + livro.exibir())
+} else {
+    alert("Status:\n" + livro.exibir())
+} `,
     //Q15
-    'btn-q44': ``,
+    'btn-q44': String.raw`// Uma empresa possui dois tipos de funcionários: horistas (pagos por hora trabalhada) e assalariados
+// (salário fixo mensal). Crie uma hierarquia de classes com Funcionario como superclasse e
+// FuncionarioHorista e FuncionarioAssalariado como subclasses. O programa deve solicitar os dados via
+// teclado e calcular o salário de cada um.
+
+class Funcionario {
+    nome: string
+    salarioBase: number
+
+    constructor(nome: string, salarioBase: number = 0) {
+        this.nome = nome
+        this.salarioBase = salarioBase
+    }
+
+    calcularSalario(): number {
+        return this.salarioBase
+    }
+}
+
+class FuncionarioHorista extends Funcionario {
+    horas: number
+    valorHora: number
+
+    constructor(nome: string, horas: number, valorHora: number) {
+        super(nome)
+        this.horas = horas
+        this.valorHora = valorHora
+    }
+
+    calcularSalario(): number {
+        return this.horas * this.valorHora
+    }
+}
+
+class FuncionarioAssalariado extends Funcionario {
+    bonus: number
+    constructor(nome: string, salarioBase: number, bonus: number) {
+        super(nome, salarioBase)
+        this.bonus = bonus
+    }
+
+    calcularSalario(): number {
+        return this.salarioBase + this.bonus
+    }
+}
+
+let tipo = prompt("1 - Horista\n2 - Assalariado")
+let nome = prompt("Nome:")
+if(nome === null) return
+
+if (tipo === "1") {
+    let h = Number(prompt("Horas:"))
+    let vh = Number(prompt("Valor hora:"))
+    let func = new FuncionarioHorista(nome, h, vh)
+    alert("Salário: R$ " + func.calcularSalario().toFixed(2))
+} else {
+    let sb = Number(prompt("Salário base:"))
+    let b = Number(prompt("Bônus:"))
+    let func = new FuncionarioAssalariado(nome, sb, b)
+    alert("Salário: R$ " + func.calcularSalario().toFixed(2))
+}`,
     //Q16
-    'btn-q45': ``,
+    'btn-q45': String.raw`// 16 - Um zoológico possui mamíferos e aves. Ambos têm nome, espécie e idade. Mamíferos têm tipo de
+// alimentação; aves têm se são migratórias ou não. Cada animal tem um comportamento de &#39;emitir som&#39;
+// diferente. O sistema deve cadastrar animais, listar por tipo e simular a &#39;hora da alimentação&#39; chamando o
+// método de som de cada um.
+
+class Animal {
+    nome: string
+    especie: string
+    idade: number
+
+    constructor(nome: string, especie: string, idade: number) {
+        this.nome = nome
+        this.especie = especie
+        this.idade = idade
+    }
+
+    emitirSom(): string {
+        return "Som genérico"
+    }
+}
+
+class Mamifero extends Animal {
+    alimentacao: string
+
+    constructor(nome: string, especie: string, idade: number, alimentacao: string) {
+        super(nome, especie, idade)
+        this.alimentacao = alimentacao
+    }
+
+    emitirSom(): string {
+        return "Som de mamífero (ex: rugido)"
+    }
+}
+
+class Ave extends Animal {
+    migratoria: boolean;
+
+    constructor(nome: string, especie: string, idade: number, migratoria: boolean) {
+        super(nome, especie, idade)
+        this.migratoria = migratoria
+    }
+
+    emitirSom(): string {
+        return "Som de ave (ex: canto)"
+    }
+}
+
+let leao = new Mamifero("Leão", "Panthera leo", 5, "carnívoro")
+let papagaio = new Ave("Papagaio", "Amazona", 3, false)
+
+alert(leao.nome + " faz: " + leao.emitirSom())
+alert(papagaio.nome + " faz: " + papagaio.emitirSom())`,
      //Q17
-    'btn-q46': ``,
+    'btn-q46': String.raw`
+// O Refeitório do IFS deseja controlar o acesso de seus usuários. Todo usuário possui um identificador
+// numérico interno e o nome completo. Os usuários dividem-se em Alunos (que possuem o curso) e
+// Servidores (que possuem o departamento). O sistema deve pedir para o operador cadastrar os usuários
+// que estão na fila. Cada vez que um usuário passa pela catraca, um método deve registrar essa presença
+// em um histórico (array). Ao digitar um comando de encerramento, o programa exibe a listagem de
+// quem almoçou no dia, mostrando mensagens personalizadas para cada tipo de usuário através de um
+// método comum de identificação, além de exibir a quantidade total de acessos de alunos.
+
+class AlunoFrequencia {
+    nome: string
+    matricula: string
+    presencas: number
+    faltas: number
+
+    constructor(nome: string, matricula: string) {
+        this.nome = nome
+        this.matricula = matricula
+        this.presencas = 0
+        this.faltas = 0
+    }
+
+    registrarPresenca(): void {
+        this.presencas++
+    }
+
+    registrarFalta(): void {
+        this.faltas++
+    }
+
+    resumo(): string {
+        return "Aluno: " + this.nome +
+               "\nMatrícula: " + this.matricula +
+               "\nPresenças: " + this.presencas +
+               "\nFaltas: " + this.faltas
+    }
+}
+
+let nome = prompt("Nome do aluno:")
+if(nome === null) return
+let mat = prompt("Matrícula:")
+if(mat === null) return
+let aluno = new AlunoFrequencia(nome, mat)
+
+for (let i = 1; i <= 5; i++) {
+    let status = prompt("Dia " + i + " - Presente? (S/N)")
+    if(status === null) return
+    if (status.toUpperCase() === "S") {
+        aluno.registrarPresenca()
+    } else {
+        aluno.registrarFalta()
+    }
+}
+
+alert("Relatório de frequência:\n" + aluno.resumo())
+}`,
      //Q18
-    'btn-q47': ``,
+    'btn-q47': String.raw`// Folha de Pagamento Unificada do IFS
+// O setor de Recursos Humanos necessita de uma ferramenta para calcular a folha salarial dos
+// colaboradores. Todo colaborador possui nome e um salário base privado. Um Professor recebe um
+// acréscimo de 20% sobre o salário base por dedicação exclusiva. Um Técnico Administrativo recebe
+// um valor fixo extra de auxílio-alimentação. O programa deve rodar em um laço solicitando o cadastro
+// dos funcionários do mês. Após coletar todos os dados, o software deve rodar a lista utilizando uma
+// estrutura de repetição, acionar o método de cálculo salarial específico de cada um e exibir o custo
+// total que a instituição terá naquele mês.
+
+class Funcionario {
+    nome: string
+    private _salarioBase: number
+
+    constructor(nome: string, salarioBase: number) {
+        this.nome = nome
+        this._salarioBase = salarioBase
+    }
+
+    get salarioBase(): number { return this._salarioBase; }
+
+    calcularSalario(): number {
+        return this._salarioBase
+    }
+}
+
+class Professor extends Funcionario {
+    constructor(nome: string, salarioBase: number) {
+        super(nome, salarioBase)
+    }
+
+    calcularSalario(): number {
+        return this.salarioBase * 1.5
+    }
+}
+
+class Tecnico extends Funcionario {
+    auxilioAlimentacao: number
+
+    constructor(nome: string, salarioBase: number, auxilio: number) {
+        super(nome, salarioBase)
+        this.auxilioAlimentacao = auxilio
+    }
+
+    calcularSalario(): number {
+        return this.salarioBase + this.auxilioAlimentacao
+    }
+}
+
+let tipo = prompt("1 - Professor\n2 - Técnico")
+let nome = prompt("Nome:")
+if(nome === null) return
+let salarioBase = Number(prompt("Salário base:"))
+
+if (tipo === "1") {
+    let func = new Professor(nome, salarioBase);
+    alert("Salário: R$ " + func.calcularSalario().toFixed(2))
+} else {
+    let aux = Number(prompt("Auxílio alimentação:"))
+    let func = new Tecnico(nome, salarioBase, aux)
+    alert("Salário: R$ " + func.calcularSalario().toFixed(2))
+}`,
      //Q19
-    'btn-q48': ``,
+    'btn-q48': String.raw`// Monitoramento de Sensores Industriais
+// Uma fábrica instalou sensores para monitorar sua produção. Todo sensor possui um código
+// identificador e a última leitura registrada. Um Sensor de Temperatura exibe sua leitura acompanhada
+// da unidade &quot;°C&quot; e possui um alerta caso passe dos 40°C. Um Sensor de Pressão exibe sua leitura
+// acompanhada de &quot;atm&quot; e alerta se passar de 5 atm. O programa deve solicitar repetidamente que o
+// técnico digite os valores lidos pelos sensores espalhados pela fábrica, armazenando-os em um array.
+// No final, o programa filtra a lista e exibe o relatório de todos os sensores que dispararam alertas de
+// perigo.
+
+class Sensor {
+    codigo: string
+    leitura: number
+
+    constructor(codigo: string, leitura: number) {
+        this.codigo = codigo
+        this.leitura = leitura
+    }
+
+    exibir(): string {
+        return "Código: " + this.codigo + " - Leitura: " + this.leitura
+    }
+
+    alerta(): boolean {
+        return false
+    }
+}
+
+class SensorTemperatura extends Sensor {
+    constructor(codigo: string, leitura: number) {
+        super(codigo, leitura)
+    }
+
+    exibir(): string {
+        return "Código: " + this.codigo + " - Temperatura: " + this.leitura + " °C"
+    }
+
+    alerta(): boolean {
+        return this.leitura > 40
+    }
+}
+
+class SensorPressao extends Sensor {
+    constructor(codigo: string, leitura: number) {
+        super(codigo, leitura)
+    }
+
+    exibir(): string {
+        return "Código: " + this.codigo + " - Pressão: " + this.leitura + " atm"
+    }
+
+    alerta(): boolean {
+        return this.leitura > 5
+    }
+}
+
+let cod = prompt("Código do sensor:")
+if(cod === null) return
+let tipoSensor = prompt("1 - Temperatura\n2 - Pressão")
+let leitura = Number(prompt("Leitura:"))
+
+let sensor: Sensor
+if (tipoSensor === "1") {
+    sensor = new SensorTemperatura(cod, leitura)
+} else {
+    sensor = new SensorPressao(cod, leitura)
+}
+
+alert("Dados do sensor:\n" + sensor.exibir() + "\nAlerta: " + (sensor.alerta() ? "SIM" : "NÃO"))`,
      //Q20
-    'btn-q49': ``,
+    'btn-q49': String.raw`// Gestão de Pedidos de uma Pizzaria Local
+// Para modernizar o atendimento de uma pizzaria, crie um sistema de pedidos. Um pedido base tem o
+// número da mesa e o valor dos ingredientes. O Pedido de Entrega (Delivery) herda as propriedades do
+// pedido base, mas precisa incluir uma taxa de entrega protegida e o endereço de destino. O software
+// deve interagir com o atendente perguntando os detalhes de cada pedido feito na noite. Conforme os
+// pedidos são criados, eles entram em um array de controle. Ao fechar o caixa, o sistema percorre a lista
+// de pedidos, calcula os valores finais de cada um (aplicando as taxas quando necessário) e exibe o
+// faturamento total do estabelecimento.
+
+class Pedido {
+    mesa: number
+    valorIngredientes: number
+
+    constructor(mesa: number, valorIngredientes: number) {
+        this.mesa = mesa
+        this.valorIngredientes = valorIngredientes
+    }
+
+    calcularTotal(): number {
+        return this.valorIngredientes
+    }
+
+    resumo(): string {
+        return "Mesa: " + this.mesa +
+               "\nValor ingredientes: R$ " + this.valorIngredientes.toFixed(2) +
+               "\nTotal: R$ " + this.calcularTotal().toFixed(2)
+    }
+}
+
+class PedidoDelivery extends Pedido {
+    taxaEntrega: number
+    endereco: string
+
+    constructor(mesa: number, valorIngredientes: number, taxaEntrega: number, endereco: string) {
+        super(mesa, valorIngredientes)
+        this.taxaEntrega = taxaEntrega
+        this.endereco = endereco
+    }
+
+    calcularTotal(): number {
+        return this.valorIngredientes + this.taxaEntrega
+    }
+
+    resumo(): string {
+        return "Mesa: " + this.mesa +
+               "\nEndereço: " + this.endereco +
+               "\nValor ingredientes: R$ " + this.valorIngredientes.toFixed(2) +
+               "\nTaxa entrega: R$ " + this.taxaEntrega.toFixed(2) +
+               "\nTotal: R$ " + this.calcularTotal().toFixed(2)
+    }
+}
+
+let tipo = prompt("1 - Pedido local\n2 - Delivery")
+let mesa = Number(prompt("Número da mesa:"))
+let valor = Number(prompt("Valor dos ingredientes:"))
+
+if (tipo === "2") {
+    let taxa = Number(prompt("Taxa de entrega:"))
+    let end = prompt("Endereço: ")
+    if(end === null) return
+    let pedido = new PedidoDelivery(mesa, valor, taxa, end)
+    alert("Resumo do pedido:\n" + pedido.resumo())
+} else {
+    let pedido = new Pedido(mesa, valor)
+    alert("Resumo do pedido:\n" + pedido.resumo())
+}`,
      //Q21
-    'btn-q50': ``,
+    'btn-q50': String.raw`// Concurso de Projetos de Extensão Reforest
+// O projeto socioambiental &quot;Flor&amp;Ser&quot; abriu inscrições para novas propostas de reflorestamento no
+// campus. Cada projeto inscrito possui título, coordenador e uma nota de avaliação avaliada de forma
+// estrita (protegida por métodos de validação para que não receba valores fora do intervalo de 0 a 10).
+// Existem Projetos Verdes (focados em plantio urbano) e Projetos Culturais (focados em
+// conscientização). O usuário deve preencher a lista de projetos avaliados através do terminal. O
+
+// programa deve calcular a média aritmética de todas as notas usando estruturas de array e, em seguida,
+// listar de forma inversa à inscrição quais projetos ganharam nota acima da média da competição.
+
+class Projeto {
+    private _titulo: string
+    private _coordenador: string
+    private _nota: number
+
+    constructor(titulo: string, coordenador: string, nota: number) {
+        this._titulo = titulo
+        this._coordenador = coordenador
+        this._nota = nota
+    }
+
+    get titulo(): string { return this._titulo }
+    get coordenador(): string { return this._coordenador }
+    get nota(): number { return this._nota }
+
+    set nota(valor: number) {
+        if (valor >= 0 && valor <= 10) {
+            this._nota = valor
+        } else {
+            alert("Nota inválida! Deve ser entre 0 e 10.")
+        }
+    }
+}
+
+let titulo = prompt("Título do projeto:")
+if(titulo === null) return
+let coordenador = prompt("Coordenador:")
+if(coordenador === null) return
+let nota = Number(prompt("Nota (0 a 10):"))
+
+let projeto = new Projeto(titulo, coordenador, nota);
+alert("Projeto cadastrado:\nTítulo: " + projeto.titulo +
+      "\nCoordenador: " + projeto.coordenador +
+      "\nNota: " + projeto.nota)`,
      //Q22
-    'btn-q51': ``,
+    'btn-q51': String.raw`// Oficina Mecânica e Revisão de Frotas
+// O setor de transportes públicos precisa mapear a manutenção de seus veículos. Crie uma classe base
+// para Veículo com placa e quilometragem atual. Os Ônibus precisam fazer revisão a cada 10.000 km,
+// enquanto as Ambulâncias precisam de revisão preventiva a cada 5.000 km. O sistema interativo deve
+// perguntar as informações da frota atual e guardar os objetos em um array. Depois, o programa solicita
+// que o mecânico informe a quilometragem atual de um determinado veículo e, varrendo o array de
+// objetos, o sistema responde textualmente se aquele veículo específico precisa ou não ser retido para
+// manutenção imediata.
+
+class Veiculo {
+    placa: string
+    km: number
+
+    constructor(placa: string, km: number) {
+        this.placa = placa
+        this.km = km
+    }
+
+    precisaRevisao(): boolean {
+        return false
+    }
+}
+
+class Onibus extends Veiculo {
+    constructor(placa: string, km: number) {
+        super(placa, km)
+    }
+
+    precisaRevisao(): boolean {
+        return this.km >= 10000
+    }
+}
+
+class Ambulancia extends Veiculo {
+    constructor(placa: string, km: number) {
+        super(placa, km)
+    }
+
+    precisaRevisao(): boolean {
+        return this.km >= 5000
+    }
+}
+
+let placa = prompt("Placa do veículo:")
+if(placa === null) return
+let km = Number(prompt("Quilometragem atual:"))
+let tipo = prompt("1 - Ônibus (10.000 km)\n2 - Ambulância (5.000 km)")
+
+let veiculo: Veiculo
+if (tipo === "1") {
+    veiculo = new Onibus(placa, km)
+} else {
+    veiculo = new Ambulancia(placa, km)
+}
+
+alert("Placa: " + veiculo.placa +
+      "\nKM: " + veiculo.km +
+      "\nPrecisa revisão? " + (veiculo.precisaRevisao() ? "SIM" : "NÃO"))`,
      //Q23
-    'btn-q52': ``,
+    'btn-q52': String.raw`// Cadastro de Produtos de um Supermercado com Desconto Progressivo
+// Um mercado de atacado precisa atualizar os preços de suas mercadorias nas prateleiras. Todo produto
+// possui código, nome e preço de custo ocultados do acesso externo direto. Os Produtos Perecíveis
+// possuem uma data de validade e recebem um desconto de 30% caso estejam no dia do vencimento. Os
+// Produtos Não Perecíveis não sofrem alteração de valor. O sistema deve interagir com o gerente para
+// listar os produtos do estoque. Após preencher o estoque (array), o programa deve rodar um loop que
+// simula a passagem do caixa, aplicando as regras de desconto conforme o tipo do produto e exibindo o
+// valor final que o cliente pagará.
+
+class Produto {
+    codigo: number
+    nome: string
+    protected _precoCusto: number
+
+    constructor(codigo: number, nome: string, precoCusto: number) {
+        this.codigo = codigo
+        this.nome = nome
+        this._precoCusto = precoCusto
+    }
+
+    get precoCusto(): number { return this._precoCusto}
+
+    calcularPrecoFinal(): number {
+        return this._precoCusto
+    }
+}
+
+class Perecivel extends Produto {
+    dataValidade: string
+
+    constructor(codigo: number, nome: string, precoCusto: number, dataValidade: string) {
+        super(codigo, nome, precoCusto)
+        this.dataValidade = dataValidade
+    }
+
+    calcularPrecoFinal(): number {
+
+        return this._precoCusto * 0.70
+    }
+}
+
+class NaoPerecivel extends Produto {
+    constructor(codigo: number, nome: string, precoCusto: number) {
+        super(codigo, nome, precoCusto)
+    }
+
+    calcularPrecoFinal(): number {
+        return this._precoCusto
+    }
+}
+
+let cod = Number(prompt("Código:"))
+let nome = prompt("Nome:")
+if(nome === null) return
+let preco = Number(prompt("Preço de custo:"))
+let tipo = prompt("1 - Perecível\n2 - Não Perecível")
+
+let produto: Produto
+if (tipo === "1") {
+    let data = prompt("Data de validade:")
+    if(data === null) return
+    produto = new Perecivel(cod, nome, preco, data)
+} else {
+    produto = new NaoPerecivel(cod, nome, preco)
+}
+
+alert("Produto: " + produto.nome +
+      "\nPreço final: R$ " + produto.calcularPrecoFinal().toFixed(2))`,
      //Q24
-    'btn-q53': ``,
+    'btn-q53': String.raw`// Gerenciador de Tarefas e Produtividade Acadêmica
+// Para ajudar os alunos a não perderem prazos, monte um gerenciador de tarefas. Uma tarefa genérica
+// possui uma descrição e o status de concluída (booleano). Uma Tarefa Acadêmica inclui o nome da
+// disciplina associada, enquanto uma Tarefa Pessoal inclui o nível de prioridade. O programa deve abrir
+// um menu para o estudante inserir suas tarefas diárias. O sistema armazena tudo em um array
+// unificado. Através da interação, o usuário pode escolher marcar uma tarefa como concluída ou listar
+// apenas as tarefas acadêmicas pendentes, utilizando a lógica de filtragem de propriedades dos objetos
+// contidos na lista.
+
+class Tarefa {
+    descricao: string
+    concluida: boolean
+
+    constructor(descricao: string) {
+        this.descricao = descricao
+        this.concluida = false
+    }
+
+    concluir(): void {
+        this.concluida = true
+    }
+}
+
+class TarefaAcademica extends Tarefa {
+    disciplina: string
+
+    constructor(descricao: string, disciplina: string) {
+        super(descricao)
+        this.disciplina = disciplina
+    }
+}
+
+class TarefaPessoal extends Tarefa {
+    prioridade: number
+
+    constructor(descricao: string, prioridade: number) {
+        super(descricao)
+        this.prioridade = prioridade
+    }
+}
+
+let tipo = prompt("1 - Acadêmica\n2 - Pessoal")
+let desc = prompt("Descrição:")
+if(desc === null) return
+
+if (tipo === "1") {
+    let disc = prompt("Disciplina:")
+    if(disc === null) return
+    let tarefa = new TarefaAcademica(desc, disc)
+    alert("Tarefa criada:\n" + tarefa.descricao + " - " + tarefa.disciplina)
+    tarefa.concluir()
+    alert("Status: " + (tarefa.concluida ? "Concluída" : "Pendente"))
+} else {
+    let prioridade = Number(prompt("Prioridade (1 a 5):"))
+    let tarefa = new TarefaPessoal(desc, prioridade)
+    alert("Tarefa criada:\n" + tarefa.descricao + " - Prioridade: " + tarefa.prioridade)
+    tarefa.concluir()
+    alert("Status: " + (tarefa.concluida ? "Concluída" : "Pendente"))
+}`,
      //Q25
-    'btn-q54': ``,
+    'btn-q54':  String.raw`// Aplicativo de Streaming e Assinaturas de Vídeo
+// Um provedor de internet quer lançar um serviço de streaming de vídeo. Cada assinatura possui o e-
+// mail do usuário e o valor do plano mensal. A Assinatura Padrão dá direito a 2 telas simultâneas. A
+// Assinatura Premium dá direito a 4 telas e inclui suporte a resolução 4K. O sistema deve pedir para o
+// atendente cadastrar novos clientes e selecionar seus planos correspondentes em um loop. Com os
+// dados salvos em uma lista de contratos, o programa deve permitir fazer uma busca pelo e-mail do
+// usuário e exibir o contrato detalhado formatado dinamicamente, revelando os benefícios e o preço
+// correto do plano escolhido por meio de polimorfismo.
+
+class Assinatura {
+    email: string
+    valor: number
+
+    constructor(email: string, valor: number) {
+        this.email = email
+        this.valor = valor
+    }
+
+    detalhes(): string {
+        return "Email: " + this.email + "\nValor: R$ " + this.valor.toFixed(2)
+    }
+}
+
+class AssinaturaPadrao extends Assinatura {
+    constructor(email: string) {
+        super(email, 29.90)
+    }
+
+    detalhes(): string {
+        return super.detalhes() + "\nTelas: 2"
+    }
+}
+
+class AssinaturaPremium extends Assinatura {
+    constructor(email: string) {
+        super(email, 49.90)
+    }
+
+    detalhes(): string {
+        return super.detalhes() + "\nTelas: 4\nResolução: 4K"
+    }
+}
+
+let email = prompt("Email:")
+if(email === null) return
+let tipo = prompt("1 - Padrão (R$29,90)\n2 - Premium (R$49,90)")
+
+let assinatura: Assinatura
+if (tipo === "1") {
+    assinatura = new AssinaturaPadrao(email)
+} else {
+    assinatura = new AssinaturaPremium(email)
+}
+
+alert("Detalhes da assinatura:\n" + assinatura.detalhes())`,
      //Q26
-    'btn-q55': ``,
+    'btn-q55': String.raw`// Simulador de Contas Bancárias Cooperativas
+
+// Uma cooperativa de crédito local precisa de um protótipo para gerenciar contas de clientes. A conta
+// deve ter o nome do titular e o saldo protegido, acessível apenas por métodos de depósito e saque.
+// Existem dois tipos de contas: a Conta Corrente (que cobra uma taxa de R$ 2,00 a cada saque) e a
+// Conta Poupança (que possui um método de rendimento que acrescenta 1% ao saldo atual). O
+// programa deve interagir com o usuário perguntando qual conta ele deseja movimentar, solicitando
+// valores para depósito e saque através de um menu repetitivo até que ele decida sair, exibindo o saldo
+// atualizado de forma protegida após cada operação.
+
+class ContaCooperativa {
+    private _numero: string
+    private _titular: string
+    private _saldo: number
+    private _taxaAdministracao: number
+
+    constructor(numero: string, titular: string, saldo: number = 0, taxa: number = 0.02) {
+        this._numero = numero
+        this._titular = titular
+        this._saldo = saldo
+        this._taxaAdministracao = taxa
+    }
+
+    get numero(): string { return this._numero }
+    get titular(): string { return this._titular }
+    get saldo(): number { return this._saldo }
+
+    depositar(valor: number): void {
+        if (valor > 0) this._saldo += valor
+    }
+
+    sacar(valor: number): void {
+        let taxa = valor * this._taxaAdministracao
+        let total = valor + taxa
+        if (total <= this._saldo) {
+            this._saldo -= total
+        } else {
+            alert("Saldo insuficiente.")
+        }
+    }
+}
+
+let num = prompt("Número da conta:")
+if(num === null) return
+let titular = prompt("Titular:")
+if(titular === null) return
+let conta = new ContaCooperativa(num, titular)
+
+alert("Conta criada: " + conta.numero + " - " + conta.titular)
+let valor = Number(prompt("Depósito inicial:"))
+conta.depositar(valor)
+alert("Saldo: R$ " + conta.saldo.toFixed(2))
+
+let saque = Number(prompt("Valor para saque (com taxa de 2%):"))
+conta.sacar(saque);
+alert("Saldo após saque: R$ " + conta.saldo.toFixed(2))`,
      //Q27
-    'btn-q56': ``,
+    'btn-q56': String.raw`// Inventário Automatizado de Equipamentos de TI
+// Para organizar os laboratórios, crie um sistema de inventário. Todo equipamento possui número de
+// tombamento e descrição. Equipamentos do tipo Computador registram a quantidade de memória
+// RAM, enquanto equipamentos do tipo Roteador registram a quantidade de portas disponíveis. O
+// usuário deve alimentar um array inserindo os equipamentos que estão sendo catalogados no
+// laboratório atual. O sistema deve validar as entradas para não aceitar valores nulos ou inválidos. Ao
+// término do cadastro, o programa varre a lista inteira, disparando o método de auto-inspeção de cada
+// objeto para imprimir uma ficha técnica detalhada de cada item do almoxarifado.
+
+class Equipamento {
+    tombamento: string
+    descricao: string
+
+    constructor(tombamento: string, descricao: string) {
+        this.tombamento = tombamento
+        this.descricao = descricao
+    }
+
+    ficha(): string {
+        return "Tombamento: " + this.tombamento + "\nDescrição: " + this.descricao
+    }
+}
+
+class Computador extends Equipamento {
+    ram: number
+
+    constructor(tombamento: string, descricao: string, ram: number) {
+        super(tombamento, descricao)
+        this.ram = ram
+    }
+
+    ficha(): string {
+        return super.ficha() + "\nRAM: " + this.ram + " GB"
+    }
+}
+
+class Roteador extends Equipamento {
+    portas: number
+
+    constructor(tombamento: string, descricao: string, portas: number) {
+        super(tombamento, descricao)
+        this.portas = portas
+    }
+
+    ficha(): string {
+        return super.ficha() + "\nPortas: " + this.portas
+    }
+}
+
+let tomb = prompt("Número de tombamento:")
+if(tomb === null) return
+let desc = prompt("Descrição:")
+if(desc === null) return
+let tipo = prompt("1 - Computador\n2 - Roteador")
+
+let equip: Equipamento
+if (tipo === "1") {
+    let ram = Number(prompt("Quantidade de RAM (GB):"))
+    equip = new Computador(tomb, desc, ram)
+} else {
+    let portas = Number(prompt("Quantidade de portas:"))
+    equip = new Roteador(tomb, desc, portas)
+}
+
+alert("Ficha do equipamento:\n" + equip.ficha())`,
      //Q28
-    'btn-q57': ``,
+    'btn-q57': String.raw`// Gestão de Diárias de um Hotel Fazenda
+// Um hotel fazenda em Tobias Barreto quer automatizar o cálculo de suas hospedagens. Uma
+// acomodação básica possui o número do quarto e o preço base da diária. A Suíte Master possui um
+// valor adicional fixo referente ao uso da hidromassagem. O sistema deve interagir com o recepcionista
+// perguntando os dados dos quartos e quantos dias o hóspede ficou alojado. O programa calcula o valor
+// total devido de cada quarto inserido em uma lista de check-outs. Ao final, utilizando métodos de
+// busca ou filtragem, o sistema deve exibir apenas os quartos que faturaram mais de R$ 1.000,00 na
+// temporada.
+
+class Acomodacao {
+    numero: number
+    precoBase: number
+
+    constructor(numero: number, precoBase: number) {
+        this.numero = numero
+        this.precoBase = precoBase
+    }
+
+    calcularTotal(dias: number): number {
+        return this.precoBase * dias
+    }
+}
+
+class SuiteMaster extends Acomodacao {
+    adicionalHidro: number
+
+    constructor(numero: number, precoBase: number, adicionalHidro: number) {
+        super(numero, precoBase)
+        this.adicionalHidro = adicionalHidro
+    }
+
+    calcularTotal(dias: number): number {
+        return (this.precoBase + this.adicionalHidro) * dias
+    }
+}
+
+let num = Number(prompt("Número do quarto:"))
+let preco = Number(prompt("Preço base da diária:"))
+let tipo = prompt("1 - Comum\n2 - Suite Master")
+
+let acomodacao: Acomodacao
+if (tipo === "2") {
+    let extra = Number(prompt("Adicional hidromassagem por diária:"))
+    acomodacao = new SuiteMaster(num, preco, extra)
+} else {
+    acomodacao = new Acomodacao(num, preco)
+}
+
+let dias = Number(prompt("Quantos dias?"))
+let total = acomodacao.calcularTotal(dias)
+
+alert("Quarto: " + acomodacao.numero +
+      "\nDiárias: " + dias +
+      "\nValor total: R$ " + total.toFixed(2))`,
      //Q29
-    'btn-q58': ``,
+    'btn-q58': String.raw`// Catálogo de Biblioteca com Penalidades de Atraso
+// Escreva um programa para gerenciar os empréstimos da biblioteca do campus. Cada obra possui título
+// e autor. As obras dividem-se em Livros Físicos e Artigos Científicos Digitais. Os Livros Físicos
+// possuem um método para calcular a multa por atraso (R$ 2,50 por dia de atraso), enquanto os Artigos
+// Digitais não geram multa física, mas registram uma advertência virtual ao usuário. O programa deve
+// solicitar continuamente que o bibliotecário informe o título da obra emprestada e a quantidade de dias
+// de atraso na devolução. Todos os registros devem ser salvos em uma lista e, ao encerrar, o sistema
+// exibe o valor total de multas que a biblioteca deve recolher.
+
+class Obra {
+    titulo: string
+    autor: string
+
+    constructor(titulo: string, autor: string) {
+        this.titulo = titulo
+        this.autor = autor
+    }
+
+    calcularMulta(dias: number): number {
+        return 0
+    }
+
+    penalidade(dias: number): string {
+        return "Sem penalidade."
+    }
+}
+
+class LivroFisico extends Obra {
+    constructor(titulo: string, autor: string) {
+        super(titulo, autor)
+    }
+
+    calcularMulta(dias: number): number {
+        return dias * 2.50
+    }
+
+    penalidade(dias: number): string {
+        return "Multa: R$ " + this.calcularMulta(dias).toFixed(2)
+    }
+}
+
+class ArtigoDigital extends Obra {
+    constructor(titulo: string, autor: string) {
+        super(titulo, autor)
+    }
+
+    calcularMulta(dias: number): number {
+        return 0
+    }
+
+    penalidade(dias: number): string {
+        return "Advertência virtual emitida."
+    }
+}
+
+let titulo = prompt("Título:")
+if(titulo === null) return
+let autor = prompt("Autor:")
+if(autor === null) return
+let tipo = prompt("1 - Livro Físico\n2 - Artigo Digital")
+let dias = Number(prompt("Dias de atraso:"))
+
+let obra: Obra
+if (tipo === "1") {
+    obra = new LivroFisico(titulo, autor)
+} else {
+    obra = new ArtigoDigital(titulo, autor)
+}
+
+alert("Obra: " + obra.titulo + " - " + obra.autor +
+      "\nPenalidade: " + obra.penalidade(dias))`,
      //Q30
-    'btn-q59': ``,
+    'btn-q59': String.raw`// O Sistema de Bilhetagem de Transporte Intermunicipal
+
+// O sistema de transportes da região precisa de um software para gerenciar a venda de passagens. Crie
+// um modelo onde cada passagem possua o nome do passageiro, CPF e o valor base da corrida. Garanta
+// que esses dados não sejam alterados diretamente de fora da classe. Existem duas modalidades: a
+// Passagem Comum e a Passagem Estudantil (que aplica automaticamente 50% de desconto no valor
+// base). O programa deve solicitar ao usuário, em um laço de repetição, os dados de várias passagens e
+// o seu tipo. No final, o sistema exibe o relatório de todas as passagens vendidas e calcula o
+// faturamento total do dia utilizando uma estrutura de redução ou soma acumulada.
+
+
+class Passagem {
+    private _nome: string
+    private _cpf: string
+    private _valorBase: number
+
+    constructor(nome: string, cpf: string, valorBase: number) {
+        this._nome = nome
+        this._cpf = cpf
+        this._valorBase = valorBase
+    }
+
+    get nome(): string { return this._nome }
+    get cpf(): string { return this._cpf }
+    get valorBase(): number { return this._valorBase }
+
+    calcularValor(): number {
+        return this._valorBase
+    }
+
+    resumo(): string {
+        return "Nome: " + this._nome +
+               "\nCPF: " + this._cpf +
+               "\nValor: R$ " + this.calcularValor().toFixed(2)
+    }
+}
+
+class PassagemComum extends Passagem {
+    constructor(nome: string, cpf: string, valorBase: number) {
+        super(nome, cpf, valorBase)
+    }
+
+    calcularValor(): number {
+        return this.valorBase
+    }
+}
+
+class PassagemEstudantil extends Passagem {
+    constructor(nome: string, cpf: string, valorBase: number) {
+        super(nome, cpf, valorBase)
+    }
+
+    calcularValor(): number {
+        return this.valorBase * 0.50
+    }
+}
+
+let nome = prompt("Nome do passageiro:")
+if(nome === null) return
+let cpf = prompt("CPF:")
+if(cpf === null) return
+let valor = Number(prompt("Valor base da passagem:"))
+let tipo = prompt("1 - Comum\n2 - Estudante (50%)")
+
+let passagem: Passagem
+if (tipo === "2") {
+    passagem = new PassagemEstudantil(nome, cpf, valor)
+} else {
+    passagem = new PassagemComum(nome, cpf, valor)
+}
+
+alert("Resumo da passagem:\n" + passagem.resumo())`,
+    
+
     
 }
 
@@ -1504,9 +2907,6 @@ document.getElementById('btn-q56')?.addEventListener('click', () => { poo_27(); 
 document.getElementById('btn-q57')?.addEventListener('click', () => { poo_28(); exibirCodigo('btn-q57'); });
 document.getElementById('btn-q58')?.addEventListener('click', () => { poo_29(); exibirCodigo('btn-q58'); });
 document.getElementById('btn-q59')?.addEventListener('click', () => { poo_30(); exibirCodigo('btn-q59'); });
-
-
-
 
 
 //DROPDOWN SELETOR
