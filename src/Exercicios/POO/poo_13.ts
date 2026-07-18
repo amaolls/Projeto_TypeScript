@@ -3,29 +3,33 @@
 // reprovado.
 
 export function poo_13() {
-    class Aluno {
-        nome: string
-        nota1: number
-        nota2: number
+class Aluno {
+    nome: string
+    nota1: number
+    nota2: number
 
-        constructor(nome: string, nota1: number, nota2: number) {
-            this.nome = nome
-            this.nota1 = nota1
-            this.nota2 = nota2
-        }
-
-        calculoMedia(): void {
-            const media = (this.nota1 + this.nota2) / 2
-            
-            if (media >= 6) {
-                console.log(`Olá ${this.nome}, você está APROVADO com média ${media}.`)
-            } else {
-                console.log(`Olá ${this.nome}, você está REPROVADO com média ${media}.`)
-            }
-        }
+    constructor(nome: string, nota1: number, nota2: number) {
+        this.nome = nome
+        this.nota1 = nota1
+        this.nota2 = nota2
     }
 
+    calcularMedia(): number {
+        return (this.nota1 + this.nota2) / 2
+    }
 
-    const aluno = new Aluno("Amanda", 3, 8)
-    aluno.calculoMedia()
+    situacao(): string {
+        return this.calcularMedia() >= 7 ? "Aprovado" : "Reprovado"
+    }
+}
+
+let nome = prompt("Nome do aluno:")
+if(nome === null) return
+let n1 = Number(prompt("Nota 1:"))
+let n2 = Number(prompt("Nota 2:"))
+
+let aluno = new Aluno(nome, n1, n2)
+alert("Aluno: " + aluno.nome +
+      "\nMédia: " + aluno.calcularMedia().toFixed(1) +
+      "\nSituação: " + aluno.situacao())
 }
