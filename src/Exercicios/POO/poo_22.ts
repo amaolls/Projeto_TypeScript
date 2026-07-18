@@ -9,4 +9,54 @@
 
 
 
-export function poo_22 (){}
+export function poo_22 (){
+class Veiculo {
+    placa: string
+    km: number
+
+    constructor(placa: string, km: number) {
+        this.placa = placa
+        this.km = km
+    }
+
+    precisaRevisao(): boolean {
+        return false
+    }
+}
+
+class Onibus extends Veiculo {
+    constructor(placa: string, km: number) {
+        super(placa, km)
+    }
+
+    precisaRevisao(): boolean {
+        return this.km >= 10000
+    }
+}
+
+class Ambulancia extends Veiculo {
+    constructor(placa: string, km: number) {
+        super(placa, km)
+    }
+
+    precisaRevisao(): boolean {
+        return this.km >= 5000
+    }
+}
+
+let placa = prompt("Placa do veículo:")
+if(placa === null) return
+let km = Number(prompt("Quilometragem atual:"))
+let tipo = prompt("1 - Ônibus (10.000 km)\n2 - Ambulância (5.000 km)")
+
+let veiculo: Veiculo
+if (tipo === "1") {
+    veiculo = new Onibus(placa, km)
+} else {
+    veiculo = new Ambulancia(placa, km)
+}
+
+alert("Placa: " + veiculo.placa +
+      "\nKM: " + veiculo.km +
+      "\nPrecisa revisão? " + (veiculo.precisaRevisao() ? "SIM" : "NÃO"))
+}
