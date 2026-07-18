@@ -9,4 +9,56 @@
 
 
 
-export function poo_24 (){}
+export function poo_24 (){
+
+class Tarefa {
+    descricao: string
+    concluida: boolean
+
+    constructor(descricao: string) {
+        this.descricao = descricao
+        this.concluida = false
+    }
+
+    concluir(): void {
+        this.concluida = true
+    }
+}
+
+class TarefaAcademica extends Tarefa {
+    disciplina: string
+
+    constructor(descricao: string, disciplina: string) {
+        super(descricao)
+        this.disciplina = disciplina
+    }
+}
+
+class TarefaPessoal extends Tarefa {
+    prioridade: number
+
+    constructor(descricao: string, prioridade: number) {
+        super(descricao)
+        this.prioridade = prioridade
+    }
+}
+
+let tipo = prompt("1 - Acadêmica\n2 - Pessoal")
+let desc = prompt("Descrição:")
+if(desc === null) return
+
+if (tipo === "1") {
+    let disc = prompt("Disciplina:")
+    if(disc === null) return
+    let tarefa = new TarefaAcademica(desc, disc)
+    alert("Tarefa criada:\n" + tarefa.descricao + " - " + tarefa.disciplina)
+    tarefa.concluir()
+    alert("Status: " + (tarefa.concluida ? "Concluída" : "Pendente"))
+} else {
+    let prioridade = Number(prompt("Prioridade (1 a 5):"))
+    let tarefa = new TarefaPessoal(desc, prioridade)
+    alert("Tarefa criada:\n" + tarefa.descricao + " - Prioridade: " + tarefa.prioridade)
+    tarefa.concluir()
+    alert("Status: " + (tarefa.concluida ? "Concluída" : "Pendente"))
+}
+}
