@@ -10,82 +10,56 @@
 
 export function poo_18() {
 
-    class Funcionario {
-        nome: string;
-        private _salario_base: number;
+class Funcionario {
+    nome: string
+    private _salarioBase: number
 
-        constructor(nome: string, salario_base: number) {
-            this.nome = nome;
-            this._salario_base = salario_base;
-        }
-
-        get salario_base(): number {
-            return this._salario_base;
-        }
-
-        calcular_salario(): number {
-            return this._salario_base;
-        }
+    constructor(nome: string, salarioBase: number) {
+        this.nome = nome
+        this._salarioBase = salarioBase
     }
 
-    class Professor extends Funcionario {
-        constructor(nome: string, salario_base: number) {
-            super(nome, salario_base);
-        }
+    get salarioBase(): number { return this._salarioBase; }
 
-        calcular_salario(): number {
-            return this.salario_base * 1.5
-        }
+    calcularSalario(): number {
+        return this._salarioBase
+    }
+}
+
+class Professor extends Funcionario {
+    constructor(nome: string, salarioBase: number) {
+        super(nome, salarioBase)
     }
 
-    class TecnicoAdministrativo extends Funcionario {
-        auxilio_alimentacao: number;
+    calcularSalario(): number {
+        return this.salarioBase * 1.5
+    }
+}
 
-        constructor(nome: string, salario_base: number, auxilio_alimentacao: number) {
-            super(nome, salario_base);
-            this.auxilio_alimentacao = auxilio_alimentacao;
-        }
+class Tecnico extends Funcionario {
+    auxilioAlimentacao: number
 
-        calcular_salario(): number {
-            return this.salario_base + this.auxilio_alimentacao;
-        }
+    constructor(nome: string, salarioBase: number, auxilio: number) {
+        super(nome, salarioBase)
+        this.auxilioAlimentacao = auxilio
     }
 
-    let totalFolha = 0;
-    let continuar = true;
-    let funcionario1: Funcionario 
-
-    while (continuar) {
-        let nome = prompt("Digite o nome do funcionário:");
-        if (nome === null) break;
-
-        let tipo = prompt("Digite o tipo do funcionário:\n1 - Professor\n2 - Técnico Administrativo");
-        if (tipo === null) break;
-
-        if (tipo === "1") {
-            let salario_base = Number(prompt("Digite o salário base:"));
-            funcionario1 = new Professor(nome, salario_base);
-        } else if (tipo === "2") {
-            let salario_base = Number(prompt("Digite o salário base:"));
-            let auxilio_alimentacao = Number(prompt("Digite o valor do auxílio alimentação:"));
-            funcionario1 = new TecnicoAdministrativo(nome, salario_base, auxilio_alimentacao);
-        } else {
-            alert("Tipo de funcionário inválido!");
-            break;
-        }
-
-       
-        if (funcionario1) {
-            alert(`Nome: ${funcionario1.nome}\nFunção: ${tipo === "1" ? "Professor" : "Técnico Administrativo"}\nSalário a receber: R$ ${funcionario1.calcular_salario().toFixed(2)}`);
-            totalFolha += funcionario1.calcular_salario();
-        }
-
-        let continuarResposta = prompt("Deseja cadastrar outro funcionário? (S/N)");
-        if (continuarResposta === null || continuarResposta.toUpperCase() !== "S") {
-            continuar = false;
-        }
+    calcularSalario(): number {
+        return this.salarioBase + this.auxilioAlimentacao
     }
+}
 
-    
-    alert(`Total da folha de pagamento: R$ ${totalFolha.toFixed(2)}`);
+let tipo = prompt("1 - Professor\n2 - Técnico")
+let nome = prompt("Nome:")
+if(nome === null) return
+let salarioBase = Number(prompt("Salário base:"))
+
+if (tipo === "1") {
+    let func = new Professor(nome, salarioBase);
+    alert("Salário: R$ " + func.calcularSalario().toFixed(2))
+} else {
+    let aux = Number(prompt("Auxílio alimentação:"))
+    let func = new Tecnico(nome, salarioBase, aux)
+    alert("Salário: R$ " + func.calcularSalario().toFixed(2))
+}
 }
