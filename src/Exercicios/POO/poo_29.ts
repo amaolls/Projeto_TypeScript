@@ -9,4 +9,68 @@
 
 
 
-export function poo_29 (){}
+export function poo_29 (){
+
+class Obra {
+    titulo: string
+    autor: string
+
+    constructor(titulo: string, autor: string) {
+        this.titulo = titulo
+        this.autor = autor
+    }
+
+    calcularMulta(dias: number): number {
+        return 0
+    }
+
+    penalidade(dias: number): string {
+        return "Sem penalidade."
+    }
+}
+
+class LivroFisico extends Obra {
+    constructor(titulo: string, autor: string) {
+        super(titulo, autor)
+    }
+
+    calcularMulta(dias: number): number {
+        return dias * 2.50
+    }
+
+    penalidade(dias: number): string {
+        return "Multa: R$ " + this.calcularMulta(dias).toFixed(2)
+    }
+}
+
+class ArtigoDigital extends Obra {
+    constructor(titulo: string, autor: string) {
+        super(titulo, autor)
+    }
+
+    calcularMulta(dias: number): number {
+        return 0
+    }
+
+    penalidade(dias: number): string {
+        return "Advertência virtual emitida."
+    }
+}
+
+let titulo = prompt("Título:")
+if(titulo === null) return
+let autor = prompt("Autor:")
+if(autor === null) return
+let tipo = prompt("1 - Livro Físico\n2 - Artigo Digital")
+let dias = Number(prompt("Dias de atraso:"))
+
+let obra: Obra
+if (tipo === "1") {
+    obra = new LivroFisico(titulo, autor)
+} else {
+    obra = new ArtigoDigital(titulo, autor)
+}
+
+alert("Obra: " + obra.titulo + " - " + obra.autor +
+      "\nPenalidade: " + obra.penalidade(dias))
+}
