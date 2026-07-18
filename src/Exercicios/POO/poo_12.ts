@@ -3,54 +3,35 @@
 // total do aluguel e exiba o resumo da locação.
 
 export function poo_12() {
-  class Aluguel {
-    public modelo: string
-    private _valorDiaria: number = 200
-    public qtDias: number
+class Locacao {
+    modelo: string
+    valorDiaria: number
+    dias: number
 
-    constructor(modelo: string, qtDias: number) {
-      this.modelo = modelo
-      this.qtDias = qtDias
+    constructor(modelo: string, valorDiaria: number, dias: number) {
+        this.modelo = modelo
+        this.valorDiaria = valorDiaria
+        this.dias = dias
     }
 
-    get vDiaria(): number {
-      return this._valorDiaria
+    calcularTotal(): number {
+        return this.valorDiaria * this.dias
     }
 
-    TotalAluguel(): void {
-      const total = this._valorDiaria * this.qtDias
-      
-      const resumo = `Resumo da Locação\n` +
-                     `Carro: ${this.modelo}\n` +
-                     `Diária: R$ ${this._valorDiaria.toFixed(2)}\n` +
-                     `Dias: ${this.qtDias}\n` +
-                     `Total: R$ ${total.toFixed(2)}`
-      
-      alert(resumo)
+    resumo(): string {
+        return "Modelo: " + this.modelo +
+               "\nDiárias: " + this.dias +
+               "\nValor total: R$ " + this.calcularTotal().toFixed(2)
     }
-  }
+}
 
-  let opcao: number = 0
-  let locacao: Aluguel | null = null
+let modelo = prompt("Modelo do carro:")
+if(modelo === null) return
+let diaria = Number(prompt("Valor da diária (R$):"))
+let dias = Number(prompt("Quantos dias?"))
 
-  while (opcao !== 3) {
-    const entrada = prompt("Menu de Locação:\n1 - Fazer reserva\n2 - Visualizar valores\n3 - Sair")
-    opcao = entrada ? parseInt(entrada) : 3
-
-    if (opcao === 1) {
-      const modelo = prompt("Digite o modelo do carro:") || "Não informado"
-      const qtDias = parseInt(prompt("Digite a quantidade de dias:") || "0")
-
-      locacao = new Aluguel(modelo, qtDias)
-      locacao.TotalAluguel()
-    } else if (opcao === 2) {
-      if (locacao) {
-        locacao.TotalAluguel()
-      } else {
-        alert("Nenhuma locação ativa encontrada.")
-      }
-    }
-  }
+let locacao = new Locacao(modelo, diaria, dias)
+alert("Resumo da locação:\n" + locacao.resumo())
 }
 
 
